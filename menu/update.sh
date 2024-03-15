@@ -8,8 +8,8 @@ wget -q -O /usr/bin/menu "https://satantech.serv00.net/arthepat/menu/menu.sh" &&
 wget -q -O /usr/bin/m-trgo "https://satantech.serv00.net/arthepat/menu/m-trgo.sh" && chmod +x /usr/bin/m-trgo
 wget -q -O /usr/bin/restore "https://satantech.serv00.net/arthepat/menu/restore.sh" && chmod +x /usr/bin/restore
 wget -q -O /usr/bin/backup "https://satantech.serv00.net/arthepat/menu/backup.sh" && chmod +x /usr/bin/backup
-wget -q -O /usr/bin/addnoobz "https://satantech.serv00.net/arthepat/bot/addnoobz.sh" && chmod +x /usr/bin/addnoobz
-wget -q -O /usr/bin/cek-noobz "https://satantech.serv00.net/arthepat/bot/cek-noobz.sh" && chmod +x /usr/bin/cek-noobz
+#wget -q -O /usr/bin/addnoobz "https://satantech.serv00.net/arthepat/bot/addnoobz.sh" && chmod +x /usr/bin/addnoobz
+#wget -q -O /usr/bin/cek-noobz "https://satantech.serv00.net/arthepat/bot/cek-noobz.sh" && chmod +x /usr/bin/cek-noobz
 wget -q -O /usr/bin/m-noobz "https://satantech.serv00.net/arthepat/menu/m-noobz.sh" && chmod +x /usr/bin/m-noobz
 wget -q -O /usr/bin/m-ip "https://satantech.serv00.net/arthepat/menu/m-ip.sh" && chmod +x /usr/bin/m-ip
 wget -q -O /usr/bin/m-bot "https://satantech.serv00.net/arthepat/menu/m-bot.sh" && chmod +x /usr/bin/m-bot
@@ -35,7 +35,7 @@ wget -q -O /usr/bin/trialvless "https://satantech.serv00.net/arthepat/menu/trial
 wget -q -O /usr/bin/trialtrojan "https://satantech.serv00.net/arthepat/menu/trialvless.sh" && chmod +x /usr/bin/trialvless
 wget -q -O /usr/bin/trialssh "https://satantech.serv00.net/arthepat/menu/trialssh.sh" && chmod +x /usr/bin/trialssh
 wget -q -O /usr/bin/autocpu "https://satantech.serv00.net/arthepat/install/autocpu.sh" && chmod +x /usr/bin/autocpu
-wget -q -O /usr/bin/bantwidth "https://satantech.serv00.net/arthepat/install/bantwidth" && chmod +x /usr/bin/bantwidth
+#wget -q -O /usr/bin/bantwidth "https://satantech.serv00.net/arthepat/install/bantwidth" && chmod +x /usr/bin/bantwidth
 echo -e " [INFO] Download File Successfully"
 sleep 2
 exit
