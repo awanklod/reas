@@ -34,8 +34,8 @@ wget -q -O /usr/bin/trialvmess "https://raw.githubusercontent.com/awanklod/reas/
 wget -q -O /usr/bin/trialvless "https://raw.githubusercontent.com/awanklod/reas/main/menu/trialtrojan.sh" && chmod +x /usr/bin/trialtrojan
 wget -q -O /usr/bin/trialtrojan "https://raw.githubusercontent.com/awanklod/reas/main/menu/trialvless.sh" && chmod +x /usr/bin/trialvless
 wget -q -O /usr/bin/trialssh "https://raw.githubusercontent.com/awanklod/reas/main/menu/trialssh.sh" && chmod +x /usr/bin/trialssh
-wget -q -O /usr/bin/autocpu "https://raw.githubusercontent.com/awanklod/reas/main/install/autocpu.sh" && chmod +x /usr/bin/autocpu
-#wget -q -O /usr/bin/bantwidth "https://raw.githubusercontent.com/awanklod/reas/main/install/bantwidth" && chmod +x /usr/bin/bantwidth
+wget -q -O /usr/bin/autocpu "https://raw.githubusercontent.com/awanklod/reas/main/menu/autocpu.sh" && chmod +x /usr/bin/autocpu
+#wget -q -O /usr/bin/bantwidth "https://raw.githubusercontent.com/awanklod/reas/main/menu/bantwidth" && chmod +x /usr/bin/bantwidth
 echo -e " [INFO] Download File Successfully"
 sleep 2
 exit
