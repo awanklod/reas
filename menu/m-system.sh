@@ -74,15 +74,15 @@ sldns() {
 wget https://satantech.serv00.net/arthepat/slowdns/installsl.sh && chmod +x installsl.sh && ./installsl.sh
 }
 res1() {
-wget https://satantech.serv00.net/arthepat/slowdns/rmbl.sh && chmod +x rmbl.sh && ./rmbl.sh
+wget https://raw.githubusercontent.com/awanklod/reas/main/domain/rmbl.sh && chmod +x rmbl.sh && ./rmbl.sh
 clear
 }
 res2() {
-wget https://satantech.serv00.net/arthepat/slowdns/rmbl1.sh && chmod +x rmbl1.sh && ./rmbl1.sh
+wget https://raw.githubusercontent.com/awanklod/reas/main/domain/rmbl1.sh && chmod +x rmbl1.sh && ./rmbl1.sh
 clear
 }
 res3() {
-wget https://satantech.serv00.net/arthepat/slowdns/rmbl2.sh && chmod +x rmbl2.sh && ./rmbl2.sh
+wget https://raw.githubusercontent.com/awanklod/reas/main/domain/rmbl2.sh && chmod +x rmbl2.sh && ./rmbl2.sh
 clear
 }
 clear
