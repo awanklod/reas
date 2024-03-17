@@ -198,7 +198,7 @@ apt -y install squid3
 
 # install squid for debian 11
 apt -y install squid
-wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/RMBL-VPN/v/install/main/squid3.conf"
+wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/awanklod/reas/main/ssh/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
 
 # setting vnstat
@@ -334,7 +334,7 @@ netfilter-persistent reload
 # download script
 cd /usr/bin
 wget -O issue "https://raw.githubusercontent.com/awanklod/reas/main/ssh/issue.net"
-wget -O m-theme "https://satantech.serv00.net/arthepat/menu/m-theme.sh"
+wget -O m-theme "https://raw.githubusercontent.com/awanklod/reas/main/menu/m-theme.sh"
 wget -O speedtest "https://raw.githubusercontent.com/awanklod/reas/main/ssh/speedtest_cli.py"
 wget -O xp "https://raw.githubusercontent.com/awanklod/reas/main/ssh/xp.sh"
 
