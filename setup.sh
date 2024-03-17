@@ -306,18 +306,18 @@ res1() {
 wget https://raw.githubusercontent.com/awanklod/reas/main/domain/rmbl.sh && chmod +x rmbl.sh && ./rmbl.sh
 clear
 }
-res2() {
-wget https://raw.githubusercontent.com/awanklod/reas/main/domain/rmbl1.sh && chmod +x rmbl1.sh && ./rmbl1.sh
-clear
-}
-res3() {
-wget https://raw.githubusercontent.com/awanklod/reas/main/domain/rmbl2.sh && chmod +x rmbl2.sh && ./rmbl2.sh
-clear
-}
-res4() {
+#res2() {
+#wget https://raw.githubusercontent.com/awanklod/reas/main/domain/rmbl1.sh && chmod +x rmbl1.sh && ./rmbl1.sh
+#clear
+#}
+#res3() {
+#wget https://raw.githubusercontent.com/awanklod/reas/main/domain/rmbl2.sh && chmod +x rmbl2.sh && ./rmbl2.sh
+#clear
+#}
+#res4() {
 #wget https://raw.githubusercontent.com/RMBL-VPN/v1/main/install/r3.sh && chmod +x r3.sh && ./r3.sh
-clear
-}
+#clear
+#}
 clear
 cd
 echo -e "${BIBlue}╭══════════════════════════════════════════╮${NC}"
