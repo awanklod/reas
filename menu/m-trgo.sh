@@ -182,7 +182,7 @@ echo "============================"
 echo "Username : $user"
 echo "Expired  : $exp4"
 echo "=========================="
-echo "Script Mod By SL"
+echo "Script CLOUDVPN"
 }
 
 function cektrgo() {
@@ -225,7 +225,7 @@ oth=$(cat /tmp/other.txt | sort | uniq | nl)
 echo "other";
 echo "$oth";
 echo "------------------------------------";
-echo "Script Mod By SL"
+echo "Script CLOUDVPN"
 rm -rf /tmp/other.txt
 }
 clear
