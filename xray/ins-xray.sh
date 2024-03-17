@@ -410,8 +410,6 @@ cat >/etc/nginx/conf.d/xray.conf <<EOF
     server {
              listen 80;
              listen [::]:80;
-             listen 7788;
-             listen [::]:7788;
              listen 8181;
              listen [::]:8181;
              listen 8282;
