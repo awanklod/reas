@@ -303,15 +303,15 @@ fun_bar() {
     tput cnorm
 }
 res1() {
-wget https://satantech.serv00.net/arthepat/install/rmbl.sh && chmod +x rmbl.sh && ./rmbl.sh
+wget https://raw.githubusercontent.com/awanklod/reas/main/domain/rmbl.sh && chmod +x rmbl.sh && ./rmbl.sh
 clear
 }
 res2() {
-#wget https://raw.githubusercontent.com/RMBL-VPN/v1/main/install/r1.sh && chmod +x cr1.sh && ./per1.sh
+wget https://raw.githubusercontent.com/awanklod/reas/main/domain/rmbl1.sh && chmod +x rmbl1.sh && ./rmbl1.sh
 clear
 }
 res3() {
-#wget https://raw.githubusercontent.com/RMBL-VPN/v1/main/install/c2.sh && chmod +x c2.sh && ./cr2.sh
+wget https://raw.githubusercontent.com/awanklod/reas/main/domain/rmbl2.sh && chmod +x rmbl2.sh && ./rmbl2.sh
 clear
 }
 res4() {
