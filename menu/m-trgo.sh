@@ -238,7 +238,7 @@ echo -e "$COLOR1│ $NC  ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}DELETE T
 echo -e "$COLOR1│ $NC  ${WH}[${COLOR1}00${WH}]${NC} ${COLOR1}• ${WH}BACK ${NC}"
 echo -e "$COLOR1╰═══════════════════════════════════════════════════╯${NC}"
 echo -e "$COLOR1╭═════════════════════ • ${WH}BY${NC}${COLOR1} • ══════════════════════╮${NC}"
-echo -e "$COLOR1${NC}          ${WH}   • Satan Fusion Tunneling •                 $COLOR1 $NC"
+echo -e "$COLOR1${NC}          ${WH}   • CLOUDVPN Tunneling •                 $COLOR1 $NC"
 echo -e "$COLOR1╰═══════════════════════════════════════════════════╯${NC}"
 echo -e ""
 echo -ne " ${WH}Select menu ${COLOR1}: ${WH}"; read opt
