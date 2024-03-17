@@ -655,46 +655,46 @@ fun_bar() {
 
 
 res2() {
-wget https://satantech.serv00.net/arthepat/install/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
+wget https://raw.githubusercontent.com/awanklod/reas/main/ssh/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
 clear
 } 
 
 res3() {
-wget https://satantech.serv00.net/arthepat/install/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
+wget https://raw.githubusercontent.com/awanklod/reas/main/xray/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
 clear
 }
 
 res4() {
-wget https://satantech.serv00.net/arthepat/sshws/insshws.sh && chmod +x insshws.sh && ./insshws.sh
+wget https://raw.githubusercontent.com/awanklod/reas/main/sshws/insshws.sh && chmod +x insshws.sh && ./insshws.sh
 clear
 }
 
 res5() {
-wget https://satantech.serv00.net/arthepat/install/set-br.sh && chmod +x set-br.sh && ./set-br.sh
+wget https://raw.githubusercontent.com/awanklod/reas/main/backup/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 clear
 }
 
 res6() {
-wget https://satantech.serv00.net/arthepat/sshws/ohp.sh && chmod +x ohp.sh && ./ohp.sh
+wget https://raw.githubusercontent.com/awanklod/reas/main/ohp/ohp.sh && chmod +x ohp.sh && ./ohp.sh
 clear
 }
 
 res7() {
-wget https://satantech.serv00.net/arthepat/menu/update.sh && chmod +x update.sh && ./update.sh
+wget https://raw.githubusercontent.com/awanklod/reas/main/menu/update.sh && chmod +x update.sh && ./update.sh
 clear
 }
 
 res8() {
-wget https://satantech.serv00.net/arthepat/slowdns/installsl.sh && chmod +x installsl.sh && bash installsl.sh
+wget https://raw.githubusercontent.com/awanklod/reas/main/slow/installsl.sh && chmod +x installsl.sh && bash installsl.sh
 clear
 }
 
 res9() {
-wget https://satantech.serv00.net/arthepat/install/udp-custom.sh && chmod +x udp-custom.sh && bash udp-custom.sh
+wget https://raw.githubusercontent.com/awanklod/reas/main/udp-custom/udp-custom.sh && chmod +x udp-custom.sh && bash udp-custom.sh
 clear
 }
 res10() {
-wget https://raw.githubusercontent.com/SatanTech/noobz/main/noobzvpns.zip
+wget https://raw.githubusercontent.com/awanklod/reas/main/noobzvpns/noobzvpns.zip
 unzip noobzvpns.zip
 chmod +x noobzvpns/*
 cd noobzvpns
@@ -705,12 +705,12 @@ clear
 }
 
 res11() {
-wget https://raw.githubusercontent.com/SatanTech/hm/main/limit/limit.sh && chmod +x limit.sh && ./limit.sh
+wget https://raw.githubusercontent.com/awanklod/reas/main/limit/limit.sh && chmod +x limit.sh && ./limit.sh
 clear
 }
 
 res12() {
-wget https://satantech.serv00.net/arthepat/install/ins-trgo.sh && chmod +x ins-trgo.sh && bash  /ins-trgo.sh
+wget https://raw.githubusercontent.com/awanklod/reas/main/trgo/ins-trgo.sh && chmod +x ins-trgo.sh && bash  /ins-trgo.sh
 clear
 }
 
@@ -829,7 +829,7 @@ if [ ! -f "/etc/log-create-user.log" ]; then
 echo "Log All Account " > /etc/log-create-user.log
 fi
 history -c
-serverV=$( curl -sS https://satantech.serv00.net/arthepat/versi  )
+serverV=$( curl -sS https://raw.githubusercontent.com/awanklod/reas/main/versi  )
 echo $serverV > /opt/.ver
 aureb=$(cat /home/re_otm)
 b=11
