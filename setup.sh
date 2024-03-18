@@ -685,7 +685,7 @@ clear
 }
 
 res8() {
-wget https://raw.githubusercontent.com/awanklod/reas/main/slow/installsl.sh && chmod +x installsl.sh && bash installsl.sh
+wget https://raw.githubusercontent.com/awanklod/reas/main/slow/installsl.sh && chmod +x installsl.sh && ./installsl.sh
 clear
 }
 
