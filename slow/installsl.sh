@@ -1,12 +1,12 @@
 #!/bin/sh
 ns_domain_cloudflare() {
-	DOMAIN="tepllovpn.eu.org"
+	DOMAIN="cloudvpn.site"
 	DOMAIN_PATH=$(cat /etc/xray/domain)
 	SUB=$(tr </dev/urandom -dc a-z0-9 | head -c7)
-	SUB_DOMAIN=${SUB}".tepllovpn.eu.org"
+	SUB_DOMAIN=${SUB}".cloudvpn.site"
 	NS_DOMAIN=ns.${SUB_DOMAIN}
-	CF_ID=bangtepllo752@gmail.com
-        CF_KEY=d8e5c652e1ddcc6fbfb20b1d7b6364de70c82
+	CF_ID=hjjhuh601@gmail.com
+        CF_KEY=960e40e91eab721c2836bb250ddfc8a8b834f
 	set -euo pipefail
 	IP=$(wget -qO- ipinfo.io/ip)
 	echo "Updating DNS NS for ${NS_DOMAIN}..."
