@@ -1,6 +1,6 @@
 #!/bin/bash
 apt install jq curl -y
-DOMAIN=tepllovpn.eu.org
+DOMAIN=cloudvpn.site
 sub=$(cat /root/subdomainx)
 dns=${sub}.cloudvpn.site
 dns2=*.${sub}.cloudvpn.site
