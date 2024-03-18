@@ -2,10 +2,10 @@
 apt install jq curl -y
 DOMAIN=tepllovpn.eu.org
 sub=$(cat /root/subdomainx)
-dns=${sub}.tepllovpn.eu.org
-dns2=*.${sub}.tepllovpn.eu.org
-CF_ID=bangtepllo752@gmail.com
-CF_KEY=d8e5c652e1ddcc6fbfb20b1d7b6364de70c82
+dns=${sub}.cloudvpn.site
+dns2=*.${sub}.cloudvpn.site
+CF_ID=hjjhuh601@gmail.com
+CF_KEY=960e40e91eab721c2836bb250ddfc8a8b834f
 set -euo pipefail
 IP=$(wget -qO- icanhazip.com);
 echo "Updating DNS for ${dns}..."
@@ -45,10 +45,10 @@ echo "$dn!������MYIP=$(wget -qO- icanhazip.com);
 apt install jq curl -y
 DOMAIN=tepllovpn.eu.org
 sub=$(cat /root/subdomainx)
-dns=${sub}.tepllovpn.eu.org
-dns2=*.${sub}.tepllovpn.eu.org
-CF_ID=bangtepllo752@gmail.com
-CF_KEY=d8e5c652e1ddcc6fbfb20b1d7b6364de70c82
+dns=${sub}.cloudvpn.site
+dns2=*.${sub}.cloudvpn.site
+CF_ID=hjjhuh601@gmail.com
+CF_KEY=960e40e91eab721c2836bb250ddfc8a8b834f
 set -euo pipefail
 IP=$(wget -qO- icanhazip.com);
 echo "Updating DNS for ${dns}..."
