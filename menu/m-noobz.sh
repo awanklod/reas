@@ -96,13 +96,13 @@ tcp_ssl port : 8443
 Example config TCP_STD 8080
 ◇━━━━━━━━━━━━━━━━━◇
 
-EB4cHVzsbaIHhGlETDO+Ck22fVlOm01SEuUAUWIilUiZj3ho/GZ5QY+Fdur7EGcHtimx0bRpPkPYSUVldGNLCXsFP3XfuuhmgsFMFK/RNdCJO1dF1LdAFlB4FSpoxofkIxg4/ot5WJVEGKPxuK7M3hm+93/8mTKR7LO196KrYbIcDbZtui7+g0u03le97wfPfnjHgd5YVflwaagi6T1PU2z5nXp0sLPrwKY5mdvmQu2QVAiMGE/ZqdjM1m2kcYDaecChWbLz4FiMVQBjEqa5G4h7zjBmxBtXFpWvOyApTfPIKK44eBHxKoLc7FXjaEFw7ONqexhB3svRPND1XR9VtkISZLEwrXQPPv1OO2pzOaS7unutCaP7pxQoTaChCn9Z2tN5tKDn8UsB/p8ouoLZPH4g83fYzO28dV2SC064+S3PLo6MlZxmlGuBUdhPuKgrfK+Rbejas7Z8GnCglJLUyTcwuynoFQiNVqiP64hMnvB9hSNl6YDQeST20ydA8dMIG7Jg8PJ52MRO5GIxNwl9y3ut7mPrn/+ia+rgoH+kz4mww6SBEy15TeXss7ZMYZcGj7A1vtTFOfCBvvqRgBxpQ6ZPcPX2+ohuC16/fQ==
+ECDLHn2OKM3Rx9mPPmbWuVY6UHpWA4EWPmBrQmq7G0jEgeXNYTkKst3cDGSzHTZzVQOC5Ycklud5TWQq9cxT5u0Rl1jchPhTBSR7WtiREomkuXx5WLlQbqWtembjzurG4e62gK3neX2ulrHV1uHbBsIitle8N8rUWzBKKTvf9kdo1uNjlFUm9PlUyozSOSZVKH0K72Ry4nkcwNVEdASszxPhQeCEoZqQxXHA7UBiejmvTfeENfkC8EBxM/EJgMCtMu48yDRN9wzKOQml57admUqMOKqoSVws9gyLH5DS/rribarb315Jl5wevMiFFO/V+FW6WZgkd13zy6KBy5QHsKnlZPaji3OfjxwI5u1qg0d/efRPfkM/Tt6fUAI5hyAI6G1vpQMpUrKcEH6j2Ejb6JCkZw2i26+Yxt3k1/O4IJgOneTPzltGh5zZjQdO2zkJRv8weGKKeG8d9OtmMmS2EL+XF1IRCNydkkXK+rQjzPxbqIGdptrxuJ47W8yE6ffmiaYk8WK9GNRnnyQTYYDU4VtGGzKOPSYVTHR8wBpLKEbGJJySBPhlnGmYDpqW0hSLXP1p6fNG+r32TAIUDY2wXeIxpM3+a5ysGOJ0
 
 ◇━━━━━━━━━━━━━━━━━◇
 Example config TCP_SSL 8443
 ◇━━━━━━━━━━━━━━━━━◇
 
-EMLBHFZfH/pBoPKJNWEVgBpE6A5ZeWbnzpI4w7UFL3EEDLbefWsxq308yXcLl9+eH0CAwm6hLFDAIEZtscw6w090SyqPTK1iZxg/XVhQupV+3gkyTy/t3OeJcEGNfgOGuBGi5HVxQNiBrKIo8gQnVnR5oDVf80HbwVUHYNiayk9B8cqGRlr8bHTMs6GcevwhgWRUhOYitN20pcF91SXkQd86eIFfMVVFpM2MkRqOiL4+ZWS1GrH+r4YVC69Q50xyZAfUm+Ps17bY3hH7qcha1o2OD8RhjYqGnRzJDJEh7tfnDG6GyLgKPk+A8wxLkd+oTDKOMMsEyFA6x2NolzEYNYIsn5C2QBlEm5NAb8RJmCkFVL+L+ekiUp0NvkIRSjhVbhcl/n1CkBWkcOPYLCwyIagNJrCoD6vkoGzprqS3IAbj7RkOQqmLquAlfeEgDk6UJao/BZaoZeeIlfhDgfATDZiooLECs/h+0/2Vff1E5wnoHovDDo3FZW8xbxXXazHWdYWg8BOU3sATfhnbZd6uWsPmAg6r3jGynibibNbO1r/n88vbvB8Au319VN8KRLI4FhPc/Z9KG+njTJkmiLoG33SbPU7fF8AP
+EEzgE2n/9uDhmapbVi3OOdH2QJceIOIFHvogi9pO0ogt39MrQ8YpMD4DoUCTOZGyycxd/ZwUCGNpsEFP0evNoj54fVgRe6S6t67YgQD1Q9qCZ5DHRN8vldoM4itlFMwIvFF3uESXv7xp3NOPptJ5U+vKelojNP6e3W4qju2z1zfmCoblYV84cBXaZTpqlo/qfSRwpkkJd8s81+1Z0WQwGz7fazcLtH5lQnf2ktIU/p01n45bzKNS6RVSspd7dAe5+az42xmtnsr2CSB+3LALOpViUM86ppixLir1xBpfatTRxSJB+HMKS1Ltm0kVUbkaWkmaoS08mdyS6tGeeZvgeH/s1s3NDUMmjRIaYBlKzlVFhQMLZVTz1fQ2A6Ii2eiJ3x8I+j+5X1N7yqFhjYm/Hc3zzCBFcrCp4ntirFiriNlmnv/nDxlvLE7B6gmg0+imFDPiaDYTJf/rg1b0svcVjT+L9rgLZ5HeJCGv/GEnms0EdXMUGWEO9mNj3vejDKyEwMxZHzVqi2PMVo/dhABliavBaGohX5Na7TiijVGROm83tF4ZQ2IRs7h+2v9mNEf3x9MmfLf6TTtg0UbjMCv0IIyCukuMlmCi+10=
 
 ◇━━━━━━━━━━━━━━━━━◇
  • cloud TUNNELING • 
@@ -124,13 +124,13 @@ tcp_ssl port : 8443
 Example config TCP_STD 8080
 ◇━━━━━━━━━━━━━━━━━◇
 
-<code>EB4cHVzsbaIHhGlETDO+Ck22fVlOm01SEuUAUWIilUiZj3ho/GZ5QY+Fdur7EGcHtimx0bRpPkPYSUVldGNLCXsFP3XfuuhmgsFMFK/RNdCJO1dF1LdAFlB4FSpoxofkIxg4/ot5WJVEGKPxuK7M3hm+93/8mTKR7LO196KrYbIcDbZtui7+g0u03le97wfPfnjHgd5YVflwaagi6T1PU2z5nXp0sLPrwKY5mdvmQu2QVAiMGE/ZqdjM1m2kcYDaecChWbLz4FiMVQBjEqa5G4h7zjBmxBtXFpWvOyApTfPIKK44eBHxKoLc7FXjaEFw7ONqexhB3svRPND1XR9VtkISZLEwrXQPPv1OO2pzOaS7unutCaP7pxQoTaChCn9Z2tN5tKDn8UsB/p8ouoLZPH4g83fYzO28dV2SC064+S3PLo6MlZxmlGuBUdhPuKgrfK+Rbejas7Z8GnCglJLUyTcwuynoFQiNVqiP64hMnvB9hSNl6YDQeST20ydA8dMIG7Jg8PJ52MRO5GIxNwl9y3ut7mPrn/+ia+rgoH+kz4mww6SBEy15TeXss7ZMYZcGj7A1vtTFOfCBvvqRgBxpQ6ZPcPX2+ohuC16/fQ==</code>
+<code>ECDLHn2OKM3Rx9mPPmbWuVY6UHpWA4EWPmBrQmq7G0jEgeXNYTkKst3cDGSzHTZzVQOC5Ycklud5TWQq9cxT5u0Rl1jchPhTBSR7WtiREomkuXx5WLlQbqWtembjzurG4e62gK3neX2ulrHV1uHbBsIitle8N8rUWzBKKTvf9kdo1uNjlFUm9PlUyozSOSZVKH0K72Ry4nkcwNVEdASszxPhQeCEoZqQxXHA7UBiejmvTfeENfkC8EBxM/EJgMCtMu48yDRN9wzKOQml57admUqMOKqoSVws9gyLH5DS/rribarb315Jl5wevMiFFO/V+FW6WZgkd13zy6KBy5QHsKnlZPaji3OfjxwI5u1qg0d/efRPfkM/Tt6fUAI5hyAI6G1vpQMpUrKcEH6j2Ejb6JCkZw2i26+Yxt3k1/O4IJgOneTPzltGh5zZjQdO2zkJRv8weGKKeG8d9OtmMmS2EL+XF1IRCNydkkXK+rQjzPxbqIGdptrxuJ47W8yE6ffmiaYk8WK9GNRnnyQTYYDU4VtGGzKOPSYVTHR8wBpLKEbGJJySBPhlnGmYDpqW0hSLXP1p6fNG+r32TAIUDY2wXeIxpM3+a5ysGOJ0</code>
 
 ◇━━━━━━━━━━━━━━━━━◇
 Example config TCP_SSL 8443
 ◇━━━━━━━━━━━━━━━━━◇
 
-<code>EMLBHFZfH/pBoPKJNWEVgBpE6A5ZeWbnzpI4w7UFL3EEDLbefWsxq308yXcLl9+eH0CAwm6hLFDAIEZtscw6w090SyqPTK1iZxg/XVhQupV+3gkyTy/t3OeJcEGNfgOGuBGi5HVxQNiBrKIo8gQnVnR5oDVf80HbwVUHYNiayk9B8cqGRlr8bHTMs6GcevwhgWRUhOYitN20pcF91SXkQd86eIFfMVVFpM2MkRqOiL4+ZWS1GrH+r4YVC69Q50xyZAfUm+Ps17bY3hH7qcha1o2OD8RhjYqGnRzJDJEh7tfnDG6GyLgKPk+A8wxLkd+oTDKOMMsEyFA6x2NolzEYNYIsn5C2QBlEm5NAb8RJmCkFVL+L+ekiUp0NvkIRSjhVbhcl/n1CkBWkcOPYLCwyIagNJrCoD6vkoGzprqS3IAbj7RkOQqmLquAlfeEgDk6UJao/BZaoZeeIlfhDgfATDZiooLECs/h+0/2Vff1E5wnoHovDDo3FZW8xbxXXazHWdYWg8BOU3sATfhnbZd6uWsPmAg6r3jGynibibNbO1r/n88vbvB8Au319VN8KRLI4FhPc/Z9KG+njTJkmiLoG33SbPU7fF8AP</code>
+<code>EEzgE2n/9uDhmapbVi3OOdH2QJceIOIFHvogi9pO0ogt39MrQ8YpMD4DoUCTOZGyycxd/ZwUCGNpsEFP0evNoj54fVgRe6S6t67YgQD1Q9qCZ5DHRN8vldoM4itlFMwIvFF3uESXv7xp3NOPptJ5U+vKelojNP6e3W4qju2z1zfmCoblYV84cBXaZTpqlo/qfSRwpkkJd8s81+1Z0WQwGz7fazcLtH5lQnf2ktIU/p01n45bzKNS6RVSspd7dAe5+az42xmtnsr2CSB+3LALOpViUM86ppixLir1xBpfatTRxSJB+HMKS1Ltm0kVUbkaWkmaoS08mdyS6tGeeZvgeH/s1s3NDUMmjRIaYBlKzlVFhQMLZVTz1fQ2A6Ii2eiJ3x8I+j+5X1N7yqFhjYm/Hc3zzCBFcrCp4ntirFiriNlmnv/nDxlvLE7B6gmg0+imFDPiaDYTJf/rg1b0svcVjT+L9rgLZ5HeJCGv/GEnms0EdXMUGWEO9mNj3vejDKyEwMxZHzVqi2PMVo/dhABliavBaGohX5Na7TiijVGROm83tF4ZQ2IRs7h+2v9mNEf3x9MmfLf6TTtg0UbjMCv0IIyCukuMlmCi+10=</code>
 
 ◇━━━━━━━━━━━━━━━━━◇
  • CLOUD TUNNELING • 
@@ -152,13 +152,13 @@ tcp_ssl port : 8443
 Example config TCP_STD 8080
 ◇━━━━━━━━━━━━━━━━━◇
 
-<code>EB4cHVzsbaIHhGlETDO+Ck22fVlOm01SEuUAUWIilUiZj3ho/GZ5QY+Fdur7EGcHtimx0bRpPkPYSUVldGNLCXsFP3XfuuhmgsFMFK/RNdCJO1dF1LdAFlB4FSpoxofkIxg4/ot5WJVEGKPxuK7M3hm+93/8mTKR7LO196KrYbIcDbZtui7+g0u03le97wfPfnjHgd5YVflwaagi6T1PU2z5nXp0sLPrwKY5mdvmQu2QVAiMGE/ZqdjM1m2kcYDaecChWbLz4FiMVQBjEqa5G4h7zjBmxBtXFpWvOyApTfPIKK44eBHxKoLc7FXjaEFw7ONqexhB3svRPND1XR9VtkISZLEwrXQPPv1OO2pzOaS7unutCaP7pxQoTaChCn9Z2tN5tKDn8UsB/p8ouoLZPH4g83fYzO28dV2SC064+S3PLo6MlZxmlGuBUdhPuKgrfK+Rbejas7Z8GnCglJLUyTcwuynoFQiNVqiP64hMnvB9hSNl6YDQeST20ydA8dMIG7Jg8PJ52MRO5GIxNwl9y3ut7mPrn/+ia+rgoH+kz4mww6SBEy15TeXss7ZMYZcGj7A1vtTFOfCBvvqRgBxpQ6ZPcPX2+ohuC16/fQ==</code>
+<code>ECDLHn2OKM3Rx9mPPmbWuVY6UHpWA4EWPmBrQmq7G0jEgeXNYTkKst3cDGSzHTZzVQOC5Ycklud5TWQq9cxT5u0Rl1jchPhTBSR7WtiREomkuXx5WLlQbqWtembjzurG4e62gK3neX2ulrHV1uHbBsIitle8N8rUWzBKKTvf9kdo1uNjlFUm9PlUyozSOSZVKH0K72Ry4nkcwNVEdASszxPhQeCEoZqQxXHA7UBiejmvTfeENfkC8EBxM/EJgMCtMu48yDRN9wzKOQml57admUqMOKqoSVws9gyLH5DS/rribarb315Jl5wevMiFFO/V+FW6WZgkd13zy6KBy5QHsKnlZPaji3OfjxwI5u1qg0d/efRPfkM/Tt6fUAI5hyAI6G1vpQMpUrKcEH6j2Ejb6JCkZw2i26+Yxt3k1/O4IJgOneTPzltGh5zZjQdO2zkJRv8weGKKeG8d9OtmMmS2EL+XF1IRCNydkkXK+rQjzPxbqIGdptrxuJ47W8yE6ffmiaYk8WK9GNRnnyQTYYDU4VtGGzKOPSYVTHR8wBpLKEbGJJySBPhlnGmYDpqW0hSLXP1p6fNG+r32TAIUDY2wXeIxpM3+a5ysGOJ0</code>
 
 ◇━━━━━━━━━━━━━━━━━◇
 Example config TCP_SSL 8443
 ◇━━━━━━━━━━━━━━━━━◇
 
-<code>EMLBHFZfH/pBoPKJNWEVgBpE6A5ZeWbnzpI4w7UFL3EEDLbefWsxq308yXcLl9+eH0CAwm6hLFDAIEZtscw6w090SyqPTK1iZxg/XVhQupV+3gkyTy/t3OeJcEGNfgOGuBGi5HVxQNiBrKIo8gQnVnR5oDVf80HbwVUHYNiayk9B8cqGRlr8bHTMs6GcevwhgWRUhOYitN20pcF91SXkQd86eIFfMVVFpM2MkRqOiL4+ZWS1GrH+r4YVC69Q50xyZAfUm+Ps17bY3hH7qcha1o2OD8RhjYqGnRzJDJEh7tfnDG6GyLgKPk+A8wxLkd+oTDKOMMsEyFA6x2NolzEYNYIsn5C2QBlEm5NAb8RJmCkFVL+L+ekiUp0NvkIRSjhVbhcl/n1CkBWkcOPYLCwyIagNJrCoD6vkoGzprqS3IAbj7RkOQqmLquAlfeEgDk6UJao/BZaoZeeIlfhDgfATDZiooLECs/h+0/2Vff1E5wnoHovDDo3FZW8xbxXXazHWdYWg8BOU3sATfhnbZd6uWsPmAg6r3jGynibibNbO1r/n88vbvB8Au319VN8KRLI4FhPc/Z9KG+njTJkmiLoG33SbPU7fF8AP</code>
+<code>EEzgE2n/9uDhmapbVi3OOdH2QJceIOIFHvogi9pO0ogt39MrQ8YpMD4DoUCTOZGyycxd/ZwUCGNpsEFP0evNoj54fVgRe6S6t67YgQD1Q9qCZ5DHRN8vldoM4itlFMwIvFF3uESXv7xp3NOPptJ5U+vKelojNP6e3W4qju2z1zfmCoblYV84cBXaZTpqlo/qfSRwpkkJd8s81+1Z0WQwGz7fazcLtH5lQnf2ktIU/p01n45bzKNS6RVSspd7dAe5+az42xmtnsr2CSB+3LALOpViUM86ppixLir1xBpfatTRxSJB+HMKS1Ltm0kVUbkaWkmaoS08mdyS6tGeeZvgeH/s1s3NDUMmjRIaYBlKzlVFhQMLZVTz1fQ2A6Ii2eiJ3x8I+j+5X1N7yqFhjYm/Hc3zzCBFcrCp4ntirFiriNlmnv/nDxlvLE7B6gmg0+imFDPiaDYTJf/rg1b0svcVjT+L9rgLZ5HeJCGv/GEnms0EdXMUGWEO9mNj3vejDKyEwMxZHzVqi2PMVo/dhABliavBaGohX5Na7TiijVGROm83tF4ZQ2IRs7h+2v9mNEf3x9MmfLf6TTtg0UbjMCv0IIyCukuMlmCi+10=</code>
 
 ◇━━━━━━━━━━━━━━━━━◇
  • CLOUD TUNNELING • 
@@ -202,13 +202,13 @@ echo -e "◇━━━━━━━━━━━━━━━━━◇" | tee -a /et
 echo -e "Example config TCP_STD 8080" | tee -a /etc/xray/noobz/akun/log-create-${user}.log
 echo -e "◇━━━━━━━━━━━━━━━━━◇" | tee -a /etc/xray/noobz/akun/log-create-${user}.log
 echo "" | tee -a /etc/xray/noobz/akun/log-create-${user}.log
-echo -e "EB4cHVzsbaIHhGlETDO+Ck22fVlOm01SEuUAUWIilUiZj3ho/GZ5QY+Fdur7EGcHtimx0bRpPkPYSUVldGNLCXsFP3XfuuhmgsFMFK/RNdCJO1dF1LdAFlB4FSpoxofkIxg4/ot5WJVEGKPxuK7M3hm+93/8mTKR7LO196KrYbIcDbZtui7+g0u03le97wfPfnjHgd5YVflwaagi6T1PU2z5nXp0sLPrwKY5mdvmQu2QVAiMGE/ZqdjM1m2kcYDaecChWbLz4FiMVQBjEqa5G4h7zjBmxBtXFpWvOyApTfPIKK44eBHxKoLc7FXjaEFw7ONqexhB3svRPND1XR9VtkISZLEwrXQPPv1OO2pzOaS7unutCaP7pxQoTaChCn9Z2tN5tKDn8UsB/p8ouoLZPH4g83fYzO28dV2SC064+S3PLo6MlZxmlGuBUdhPuKgrfK+Rbejas7Z8GnCglJLUyTcwuynoFQiNVqiP64hMnvB9hSNl6YDQeST20ydA8dMIG7Jg8PJ52MRO5GIxNwl9y3ut7mPrn/+ia+rgoH+kz4mww6SBEy15TeXss7ZMYZcGj7A1vtTFOfCBvvqRgBxpQ6ZPcPX2+ohuC16/fQ==" | tee -a /etc/xray/noobz/akun/log-create-${user}.log
+echo -e "ECDLHn2OKM3Rx9mPPmbWuVY6UHpWA4EWPmBrQmq7G0jEgeXNYTkKst3cDGSzHTZzVQOC5Ycklud5TWQq9cxT5u0Rl1jchPhTBSR7WtiREomkuXx5WLlQbqWtembjzurG4e62gK3neX2ulrHV1uHbBsIitle8N8rUWzBKKTvf9kdo1uNjlFUm9PlUyozSOSZVKH0K72Ry4nkcwNVEdASszxPhQeCEoZqQxXHA7UBiejmvTfeENfkC8EBxM/EJgMCtMu48yDRN9wzKOQml57admUqMOKqoSVws9gyLH5DS/rribarb315Jl5wevMiFFO/V+FW6WZgkd13zy6KBy5QHsKnlZPaji3OfjxwI5u1qg0d/efRPfkM/Tt6fUAI5hyAI6G1vpQMpUrKcEH6j2Ejb6JCkZw2i26+Yxt3k1/O4IJgOneTPzltGh5zZjQdO2zkJRv8weGKKeG8d9OtmMmS2EL+XF1IRCNydkkXK+rQjzPxbqIGdptrxuJ47W8yE6ffmiaYk8WK9GNRnnyQTYYDU4VtGGzKOPSYVTHR8wBpLKEbGJJySBPhlnGmYDpqW0hSLXP1p6fNG+r32TAIUDY2wXeIxpM3+a5ysGOJ0" | tee -a /etc/xray/noobz/akun/log-create-${user}.log
 echo "" | tee -a /etc/xray/noobz/akun/log-create-${user}.log
 echo -e "◇━━━━━━━━━━━━━━━━━◇" | tee -a /etc/xray/noobz/akun/log-create-${user}.log
 echo -e "Example config TCP_SSL 8443" | tee -a /etc/xray/noobz/akun/log-create-${user}.log
 echo -e "◇━━━━━━━━━━━━━━━━━◇" | tee -a /etc/xray/noobz/akun/log-create-${user}.log
 echo "" | tee -a /etc/xray/noobz/akun/log-create-${user}.log
-echo -e "EMLBHFZfH/pBoPKJNWEVgBpE6A5ZeWbnzpI4w7UFL3EEDLbefWsxq308yXcLl9+eH0CAwm6hLFDAIEZtscw6w090SyqPTK1iZxg/XVhQupV+3gkyTy/t3OeJcEGNfgOGuBGi5HVxQNiBrKIo8gQnVnR5oDVf80HbwVUHYNiayk9B8cqGRlr8bHTMs6GcevwhgWRUhOYitN20pcF91SXkQd86eIFfMVVFpM2MkRqOiL4+ZWS1GrH+r4YVC69Q50xyZAfUm+Ps17bY3hH7qcha1o2OD8RhjYqGnRzJDJEh7tfnDG6GyLgKPk+A8wxLkd+oTDKOMMsEyFA6x2NolzEYNYIsn5C2QBlEm5NAb8RJmCkFVL+L+ekiUp0NvkIRSjhVbhcl/n1CkBWkcOPYLCwyIagNJrCoD6vkoGzprqS3IAbj7RkOQqmLquAlfeEgDk6UJao/BZaoZeeIlfhDgfATDZiooLECs/h+0/2Vff1E5wnoHovDDo3FZW8xbxXXazHWdYWg8BOU3sATfhnbZd6uWsPmAg6r3jGynibibNbO1r/n88vbvB8Au319VN8KRLI4FhPc/Z9KG+njTJkmiLoG33SbPU7fF8AP" | tee -a /etc/xray/noobz/akun/log-create-${user}.log
+echo -e "EEzgE2n/9uDhmapbVi3OOdH2QJceIOIFHvogi9pO0ogt39MrQ8YpMD4DoUCTOZGyycxd/ZwUCGNpsEFP0evNoj54fVgRe6S6t67YgQD1Q9qCZ5DHRN8vldoM4itlFMwIvFF3uESXv7xp3NOPptJ5U+vKelojNP6e3W4qju2z1zfmCoblYV84cBXaZTpqlo/qfSRwpkkJd8s81+1Z0WQwGz7fazcLtH5lQnf2ktIU/p01n45bzKNS6RVSspd7dAe5+az42xmtnsr2CSB+3LALOpViUM86ppixLir1xBpfatTRxSJB+HMKS1Ltm0kVUbkaWkmaoS08mdyS6tGeeZvgeH/s1s3NDUMmjRIaYBlKzlVFhQMLZVTz1fQ2A6Ii2eiJ3x8I+j+5X1N7yqFhjYm/Hc3zzCBFcrCp4ntirFiriNlmnv/nDxlvLE7B6gmg0+imFDPiaDYTJf/rg1b0svcVjT+L9rgLZ5HeJCGv/GEnms0EdXMUGWEO9mNj3vejDKyEwMxZHzVqi2PMVo/dhABliavBaGohX5Na7TiijVGROm83tF4ZQ2IRs7h+2v9mNEf3x9MmfLf6TTtg0UbjMCv0IIyCukuMlmCi+10=" | tee -a /etc/xray/noobz/akun/log-create-${user}.log
 echo "" | tee -a /etc/xray/noobz/akun/log-create-${user}.log
 echo -e "◇━━━━━━━━━━━━━━━━━◇" | tee -a /etc/xray/noobz/akun/log-create-${user}.log
 echo -e " • CLOUD TUNNELING •" | tee -a /etc/xray/noobz/akun/log-create-${user}.log
