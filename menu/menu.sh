@@ -331,7 +331,7 @@ vless=$(grep -c -E "^#vlg " "/etc/xray/config.json")
 # TOTAL CREATE ACC TROJAN
 trtls=$(grep -c -E "^#trg " "/etc/xray/config.json")
 # TOTAL CREATE ACC SHADOWSOCKS
-jumlah_shadowsocks=$(grep -c -E "^#ss " "/etc/xray/config.json")
+jumlah_shadowsocks=$(grep -c -E "^## " "/etc/xray/config.json")
 # TOTAL CREATE ACC SSH
 total_ssh=$(grep -c -E "^### " "/etc/xray/ssh")
 # TOTAL CREATE ACC NOOBZ
