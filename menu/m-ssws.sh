@@ -385,7 +385,7 @@ masaaktif=1
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#ssws$/a\### '"$user $exp"'\
 },{"password": "'""$uuid""'","method": "'""$cipher""'","email": "'""$user""'"' /etc/xray/config.json
-sed -i '/#ssgrpc$/a\### '"$user $exp"'\
+sed -i '/#ssgrpc$/a\#ss '"$user $exp"'\
 },{"password": "'""$uuid""'","method": "'""$cipher""'","email": "'""$user""'"' /etc/xray/config.json
 echo $cipher:$uuid > /tmp/log
 shadowsocks_base64=$(cat /tmp/log)
@@ -484,7 +484,7 @@ URL="https://api.telegram.org/bot$KEY/sendMessage"
 ISP=$(cat /etc/xray/isp)
 CITY=$(cat /etc/xray/city)
 domain=$(cat /etc/xray/domain)
-NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
+NUMBER_OF_CLIENTS=$(grep -c -E "^#ss " "/etc/xray/config.json")
 	if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
 		clear
         echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -504,7 +504,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
     echo -e "\\E[0;41;36m            Renew Shadowsocks           \E[0m"
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo ""
-  	grep -E "^### " "/etc/xray/config.json" | cut -d ' ' -f 2-3 | column -t | sort | uniq
+  	grep -E "^#ss " "/etc/xray/config.json" | cut -d ' ' -f 2-3 | column -t | sort | uniq
     echo ""
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 	read -rp "Input Username : " user
@@ -512,14 +512,14 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
     menu
     else
     read -p "Expired (days): " masaaktif
-    exp=$(grep -wE "^### $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
+    exp=$(grep -wE "^#ss $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
     now=$(date +%Y-%m-%d)
     d1=$(date -d "$exp" +%s)
     d2=$(date -d "$now" +%s)
     exp2=$(( (d1 - d2) / 86400 ))
     exp3=$(($exp2 + $masaaktif))
     exp4=`date -d "$exp3 days" +"%Y-%m-%d"`
-    sed -i "/### $user/c\### $user $exp4" /etc/xray/config.json
+    sed -i "/#ss $user/c\#ss $user $exp4" /etc/xray/config.json
     TEXT="
 <code>◇━━━━━━━━━━━━━━◇</code>
 <b>   XRAY SHADOWSOCKS RENEW</b>
@@ -546,11 +546,11 @@ curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$T
     echo ""
     read -n 1 -s -r -p "Press any key to back on m-ssws"
     m-ssws
-}
+    }
 
 function del-ssws(){
 clear
-NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
+NUMBER_OF_CLIENTS=$(grep -c -E "^#ss " "/etc/xray/config.json")
 	if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
 		echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
         echo -e "\\E[0;41;36m       Delete Sodosok Account      \E[0m"
@@ -569,15 +569,15 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo "  User       Expired  "
 	echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-	grep -E "^### " "/etc/xray/config.json" | cut -d ' ' -f 2-3 | column -t | sort | uniq
+	grep -E "^#ss " "/etc/xray/config.json" | cut -d ' ' -f 2-3 | column -t | sort | uniq
     echo ""
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 	read -rp "Input Username : " user
     if [ -z $user ]; then
     menu
     else
-    exp=$(grep -wE "^### $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
-    sed -i "/^### $user $exp/,/^},{/d" /etc/xray/config.json
+    exp=$(grep -wE "^#ss $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
+    sed -i "/^#ss $user $exp/,/^},{/d" /etc/xray/config.json
     systemctl restart xray > /dev/null 2>&1
     clear
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -589,9 +589,9 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
     echo ""
     read -n 1 -s -r -p "Press any key to back on m-ssws"
     m-ssws
-}
+    }
 
-function cek-sshws(){
+function cek-ssws(){
 TIMES="10"
 CHATID=$(cat /etc/per/id)
 KEY=$(cat /etc/per/token)
@@ -604,7 +604,7 @@ domain=$(cat /etc/xray/domain)
 clear
 author=$(cat /etc/profil)
 echo -n > /tmp/other.txt
-data=( `cat /etc/xray/config.json | grep '^##' | cut -d ' ' -f 2 | sort | uniq`);
+data=( `cat /etc/xray/config.json | grep '^#ss' | cut -d ' ' -f 2 | sort | uniq`);
 echo -e "$COLOR1╭═════════════════════════════════════════════════╮${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}             ${WH}• SSWS USER ONLINE •              ${NC} $COLOR1 $NC"
 echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
@@ -665,7 +665,7 @@ read -n 1 -s -r -p "   Press any key to back on m-ssws"
 m-ssws
 }
 
-function list-vmess(){
+function list-ssws(){
 clear
 tls="$(cat ~/log-install.txt | grep -w "Shadowsocks WS TLS" | cut -d: -f2|sed 's/ //g')"
 ntls="$(cat ~/log-install.txt | grep -w "Shadowsocks WS none TLS" | cut -d: -f2|sed 's/ //g')"
@@ -680,7 +680,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#ss " "/etc/xray/config.json")
 		echo ""
 		echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
                 read -n 1 -s -r -p "Press any key to back on menu"
-        m-vmess
+        m-ssws
 	fi
 	clear
 	echo ""
