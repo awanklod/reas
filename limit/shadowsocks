@@ -30,7 +30,7 @@ function con() {
 
   while true; do
   sleep 30
-  data=($(cat /etc/shadowsocks/.shadowsocks.db | grep '^#!#' | cut -d ' ' -f 2 | sort | uniq))
+  data=($(cat /etc/shadowsocks/.shadowsocks.db | grep '^#ss#' | cut -d ' ' -f 2 | sort | uniq))
   if [[ ! -e /etc/limit/shadowsocks ]]; then
   mkdir -p /etc/limit/shadowsocks
   fi
@@ -67,9 +67,9 @@ for user in ${data[@]}
       if [ -e /etc/limit/shadowsocks/${user} ]; then
       Usage=$(cat /etc/limit/shadowsocks/${user});
       if [[ ${Usage} -gt ${checkLimit} ]]; then
-      exp=($(cat /etc/shadowsocks/.shadowsocks.db | grep '^#!#' | cut -d ' ' -f 2 | sort | uniq))
-      sed -i "/^#!# $user $exp/,/^},{/d" /etc/xray/config.json
-      sed -i "/^#!# $user $exp/d" /etc/shadowsocks/.shadowsocks.db
+      exp=($(cat /etc/shadowsocks/.shadowsocks.db | grep '^#ss#' | cut -d ' ' -f 2 | sort | uniq))
+      sed -i "/^#ss# $user $exp/,/^},{/d" /etc/xray/config.json
+      sed -i "/^#ss# $user $exp/d" /etc/shadowsocks/.shadowsocks.db
       bol=$(cat /etc/limit/shadowsocks/${user});
       total=$(con ${bol})
       send-log
