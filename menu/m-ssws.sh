@@ -61,8 +61,8 @@ echo $cipher:$uuid > /tmp/log
 shadowsocks_base64=$(cat /tmp/log)
 echo -n "${shadowsocks_base64}" | base64 > /tmp/log1
 shadowsocks_base64e=$(cat /tmp/log1)
-shadowsockslink="ss://${shadowsocks_base64e}@$domain:$443?plugin=xray-plugin;mux=0;path=/ss-ws;host=$domain;443#${user}"
-shadowsockslink1="ss://${shadowsocks_base64e}@$domain:$443?plugin=xray-plugin;mux=0;serviceName=ss-grpc;host=$domain;443#${user}"
+shadowsockslink="ss://${shadowsocks_base64e}@$domain:443?plugin=xray-plugin;mux=0;path=/ss-ws;host=$domain;443#${user}"
+shadowsockslink1="ss://${shadowsocks_base64e}@$domain:443?plugin=xray-plugin;mux=0;serviceName=ss-grpc;host=$domain;443#${user}"
 systemctl restart xray
 rm -rf /tmp/log
 rm -rf /tmp/log1
