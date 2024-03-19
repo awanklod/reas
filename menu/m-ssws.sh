@@ -18,7 +18,6 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1 ${NC} ${COLBG1}             ${WH}• CREATE SSWS USER •              ${NC} $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-tls="$(cat ~/log-install.txt | grep -w "Websocket Shadowsocks" | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 read -rp "   Input Username : " -e user
 if [ -z $user ]; then
@@ -62,8 +61,8 @@ echo $cipher:$uuid > /tmp/log
 shadowsocks_base64=$(cat /tmp/log)
 echo -n "${shadowsocks_base64}" | base64 > /tmp/log1
 shadowsocks_base64e=$(cat /tmp/log1)
-shadowsockslink="ss://${shadowsocks_base64e}@$domain:$tls?plugin=xray-plugin;mux=0;path=/ss-ws;host=$domain;tls#${user}"
-shadowsockslink1="ss://${shadowsocks_base64e}@$domain:$tls?plugin=xray-plugin;mux=0;serviceName=ss-grpc;host=$domain;tls#${user}"
+shadowsockslink="ss://${shadowsocks_base64e}@$domain:$443?plugin=xray-plugin;mux=0;path=/ss-ws;host=$domain;443#${user}"
+shadowsockslink1="ss://${shadowsocks_base64e}@$domain:$443?plugin=xray-plugin;mux=0;serviceName=ss-grpc;host=$domain;443#${user}"
 systemctl restart xray
 rm -rf /tmp/log
 rm -rf /tmp/log1
@@ -292,8 +291,8 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1 ${NC} ${WH}Remarks     ${COLOR1}: ${WH}${user}" 
 echo -e "$COLOR1 ${NC} ${WH}Expired On  ${COLOR1}: ${WH}$exp"  
 echo -e "$COLOR1 ${NC} ${WH}Domain      ${COLOR1}: ${WH}${domain}"  
-echo -e "$COLOR1 ${NC} ${WH}Port TLS    ${COLOR1}: ${WH}${tls}"  
-echo -e "$COLOR1 ${NC} ${WH}Port  GRPC  ${COLOR1}: ${WH}${tls}" 
+echo -e "$COLOR1 ${NC} ${WH}Port TLS    ${COLOR1}: ${WH} 443"  
+echo -e "$COLOR1 ${NC} ${WH}Port  GRPC  ${COLOR1}: ${WH} 443" 
 echo -e "$COLOR1 ${NC} ${WH}Password    ${COLOR1}: ${WH}${uuid}"  
 echo -e "$COLOR1 ${NC} ${WH}Cipers      ${COLOR1}: ${WH}aes-128-gcm"  
 echo -e "$COLOR1 ${NC} ${WH}Network     ${COLOR1}: ${WH}ws/grpc"  
