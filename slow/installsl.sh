@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 ns_domain_cloudflare() {
 	DOMAIN="cloudvpn.site"
 	DOMAIN_PATH=$(cat /etc/xray/domain)
