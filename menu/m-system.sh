@@ -71,7 +71,7 @@ echo -e "\033[0;33m]\033[1;37m -\033[1;32m Succes !\033[1;37m"
 tput cnorm
 }
 sldns() {
-wget https://raw.githubusercontent.com/awanklod/reas/main/slowdns/slowdns.sh && chmod +x slowdns.sh && bash slowdns.sh
+wget https://raw.githubusercontent.com/awanklod/reas/main/slowdns.sh && chmod +x slowdns.sh && bash slowdns.sh
 }
 res1() {
 wget https://raw.githubusercontent.com/awanklod/reas/main/domain/rmbl.sh && chmod +x rmbl.sh && ./rmbl.sh
