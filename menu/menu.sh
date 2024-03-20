@@ -601,7 +601,7 @@ case $opt in
 11 | 11) clear ; m-backup;;
 12 | 12) clear ; reboot ;;
 13 | 13) clear ; $ressee ;;
-14 | 14) clear ; key ;;
+#14 | 14) clear ; key ;;
 15 | 15) clear ; m-ssws ;;
 22 | 22) clear ; running;;
 23 | 23) clear ; restartservice ;;
