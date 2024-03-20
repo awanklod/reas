@@ -685,7 +685,7 @@ clear
 }
 
 res8() {
-wget https://raw.githubusercontent.com/awanklod/reas/main/slowdns/slowdns.sh && chmod +x slowdns.sh && bash slowdns.sh
+wget https://raw.githubusercontent.com/awanklod/reas/main/slowdns.sh && chmod +x slowdns.sh && bash slowdns.sh
 clear
 }
 
