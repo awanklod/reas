@@ -47,7 +47,7 @@ fi
 function key(){
 rm -rf /root/rmbl
 echo -e  "${COLOR1}╭══════════════════════════════════════════╮${NC}"
-echo -e  "${COLOR1}│              PASWORD SCRIPT RMBL VPN     │${NC}"
+echo -e  "${COLOR1}│              PASWORD SCRIPT          │${NC}"
 echo -e  "${COLOR1}╰══════════════════════════════════════════╯${NC}"
 echo " "
 read -rp "Masukan Key Kamu Disini ctrl + c Exit : " -e kode
@@ -601,8 +601,8 @@ case $opt in
 11 | 11) clear ; m-backup;;
 12 | 12) clear ; reboot ;;
 13 | 13) clear ; $ressee ;;
-#14 | 14) clear ; key ;;
-15 | 15) clear ; m-ssws ;;
+14 | 14) clear ; m-ssws ;;
+#15 | 15) clear ; m-ssws ;;
 22 | 22) clear ; running;;
 23 | 23) clear ; restartservice ;;
 89 | 89) clear ; bannner ;;
