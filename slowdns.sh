@@ -1,10 +1,11 @@
-#!/bin/bash
+#!/bin/sh
+REPOS="https://raw.githubusercontent.com/awanklod/reas/main/"
 ns_domain_cloudflare() {
 	DOMAIN="cloudvpn.site"
 	DOMAIN_PATH=$(cat /etc/xray/domain)
 	SUB=$(tr </dev/urandom -dc a-z0-9 | head -c7)
-	SUB_DOMAIN=${SUB}".cloudvpn.site"
-	NS_DOMAIN=ns.${SUB_DOMAIN}
+	SUB_DOMAIN=${SUB}."cloudvpn.site"
+	NS_DOMAIN=dns.${SUB_DOMAIN}
 	CF_ID=hjjhuh601@gmail.com
         CF_KEY=960e40e91eab721c2836bb250ddfc8a8b834f
 	set -euo pipefail
@@ -46,19 +47,19 @@ ns_domain_cloudflare() {
 
 setup_dnstt() {
 	cd
+	rm -rf *
 	mkdir -p /etc/slowdns
-	wget -O dnstt-server "https://raw.githubusercontent.com/awanklod/reas/main/slowdns/dnstt-server" >/dev/null 2>&1
+	wget -O dnstt-server "${REPOS}slowdns/dnstt-server" >/dev/null 2>&1
 	chmod +x dnstt-server >/dev/null 2>&1
-	wget -O dnstt-client "https://raw.githubusercontent.com/awanklod/reas/main/slowdns/dnstt-client" >/dev/null 2>&1
+	wget -O dnstt-client "${REPOS}slowdns/dnstt-client" >/dev/null 2>&1
 	chmod +x dnstt-client >/dev/null 2>&1
 	./dnstt-server -gen-key -privkey-file server.key -pubkey-file server.pub
 	chmod +x *
 	mv * /etc/slowdns
-	wget -O /etc/systemd/system/client.service "https://raw.githubusercontent.com/awanklod/reas/main/slowdns/client" >/dev/null 2>&1
-	wget -O /etc/systemd/system/server.service "https://raw.githubusercontent.com/awanklod/reas/main/slowdns/server" >/dev/null 2>&1
+	wget -O /etc/systemd/system/client.service "${REPOS}slowdns/client" >/dev/null 2>&1
+	wget -O /etc/systemd/system/server.service "${REPOS}slowdns/server" >/dev/null 2>&1
 	sed -i "s/xxxx/$NS_DOMAIN/g" /etc/systemd/system/client.service 
 	sed -i "s/xxxx/$NS_DOMAIN/g" /etc/systemd/system/server.service 
 }
 ns_domain_cloudflare
 setup_dnstt
-exit
