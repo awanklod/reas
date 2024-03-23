@@ -684,10 +684,18 @@ wget https://raw.githubusercontent.com/awanklod/reas/main/menu/update.sh && chmo
 clear
 }
 
-res8() {
-wget https://raw.githubusercontent.com/awanklod/reas/main/slowdns.sh && chmod +x slowdns.sh && ./slowdns.sh
+ssh_slow(){
 clear
+# // Installing UDP Mini
+print_install "Memasang modul SlowDNS Server"
+    wget -q -O /tmp/nameserver "${REPO}slowdns/nameserver" >/dev/null 2>&1
+    chmod +x /tmp/nameserver
+    bash /tmp/nameserver | tee /root/install.log
+ print_success "SlowDNS"
 }
+
+clear
+
 
 res9() {
 wget https://raw.githubusercontent.com/awanklod/reas/main/udp-custom/udp-custom.sh && chmod +x udp-custom.sh && bash udp-custom.sh
@@ -747,7 +755,7 @@ fun_bar 'res7'
 echo -e "${BIBlue}╭══════════════════════════════════════════╮${NC}"
 echo -e "${BIBlue}│ ${BGCOLOR}           DOWNLOAD SLOW DNS            ${NC}${BIBlue} │${NC}"
 echo -e "${BIBlue}╰══════════════════════════════════════════╯${NC}"
-fun_bar 'res8'
+fun_bar 'ssh_slow'
 
 echo -e "${BIBlue}╭══════════════════════════════════════════╮${NC}"
 echo -e "${BIBlue}│ ${BGCOLOR}          DOWNLOAD UDP COSTUM           ${NC}${BIBlue} │${NC}"
