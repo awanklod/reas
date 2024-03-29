@@ -137,9 +137,9 @@ _______________________________
 Payload WS/WSS   :
 GET / HTTP/1.1[crlf]Host: [host][crlf]Connection: Upgrade[crlf]User-Agent: [ua][crlf]Upgrade: ws[crlf][crlf]
 _______________________________
-OpenVPN SSL      : http://$domen:89/ssl.ovpn
-OpenVPN TCP      : http://$domen:89/tcp.ovpn
-OpenVPN UDP      : http://$domen:89/udp.ovpn
+OpenVPN SSL      : http://$ip:89/ssl.ovpn
+OpenVPN TCP      : http://$ip:89/tcp.ovpn
+OpenVPN UDP      : http://$ip:89/udp.ovpn
 _______________________________
 END
 if [[ -e /etc/cloudfront ]]; then
