@@ -705,7 +705,7 @@ clear
 }
 
 res11() {
-wget https://raw.githubusercontent.com/awanklod/reas/main/limit/limit.sh && chmod +x limit.sh && ./limit.sh
+#wget https://raw.githubusercontent.com/awanklod/reas/main/limit/limit.sh && chmod +x limit.sh && ./limit.sh
 clear
 }
 
