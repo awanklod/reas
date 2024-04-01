@@ -236,12 +236,12 @@ connect = 127.0.0.1:22
 accept = 777
 connect = 127.0.0.1:109
 
-#[ws-stunnel]
-#accept = 2096
-#connect = 700
 [ws-stunnel]
-accept = 443
+accept = 2096
 connect = 700
+#[ws-stunnel]
+#accept = 443
+#connect = 700
 
 [openvpn]
 accept = 442
