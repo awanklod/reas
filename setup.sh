@@ -11,8 +11,6 @@ else
 fi
 }
 clear
-
-
 red='\e[1;31m'
 green='\e[0;32m'
 yell='\e[1;33m'
