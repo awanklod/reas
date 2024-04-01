@@ -4,8 +4,10 @@ MYIP=$(curl -sS ipv4.icanhazip.com)
 IPVPS=$(curl -sS https://raw.githubusercontent.com/awanklod/reas/main/izin | grep $MYIP | awk '{print $4}')
 if [[ $MYIP == $IPVPS ]]; then
 domain
+Casper2
 else
   domain
+  Casper2
 fi
 }
 clear
