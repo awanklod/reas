@@ -462,7 +462,7 @@ echo -e " $COLOR1│$NC ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}TROJAN   
 echo -e " $COLOR1│$NC ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH}NOOBZVPNS ${WH}[${COLOR1}Menu${WH}]   ${NC} $COLOR1│${NC}  ${WH}[${COLOR1}11${WH}]${NC} ${COLOR1}• ${WH}BACKUP     ${WH}[${COLOR1}Menu${WH}] $COLOR1│${NC}" 
 echo -e " $COLOR1│$NC ${WH}[${COLOR1}06${WH}]${NC} ${COLOR1}• ${WH}TROJAN-GO ${WH}[${COLOR1}Menu${WH}]   ${NC} $COLOR1│${NC}  ${WH}[${COLOR1}12${WH}]${NC} ${COLOR1}• ${WH}REBOOT     ${WH}[${COLOR1}Menu${WH}] $COLOR1│${NC}" 
 echo -e " $COLOR1│$NC ${WH}[${COLOR1}15${WH}]${NC} ${COLOR1}• ${WH}SSWS/GRCP ${WH}[${COLOR1}Menu${WH}]   ${NC} $COLOR1│${NC}  ${WH}[${COLOR1}23${WH}]${NC} ${COLOR1}• ${WH}RESTART    ${WH}[${COLOR1}Menu${WH}] $COLOR1│${NC}"
-echo -e " $COLOR1│$NC ${WH}[${COLOR1}22${WH}]${NC} ${COLOR1}• ${WH}RUNNING   ${WH}[${COLOR1}Menu${WH}]   ${NC} $COLOR1│${NC}  ${WH}[${COLOR1}X ${WH}]${NC} ${COLOR1}• ${WH}EXIT       ${WH}[${COLOR1}Menu${WH}] $COLOR1│${NC}"
+echo -e " $COLOR1│$NC ${WH}[${COLOR1}22${WH}]${NC} ${COLOR1}• ${WH}RUNNING   ${WH}[${COLOR1}Menu${WH}]   ${NC} $COLOR1│${NC}  ${WH}[${COLOR1}24${WH}]${NC} ${COLOR1}• ${WH}Media test ${WH}[${COLOR1}Menu${WH}] $COLOR1│${NC}"
 echo -e " $COLOR1╰════════════════════════════════════════════════════════╯${NC}"
 if [ "$Isadmin" = "ON" ]; then
 echo -e "$COLOR1╭════════════════════ • ${WH}PANEL ADMIN VIP${NC}${COLOR1} • ════════════════╮${NC}"
@@ -605,6 +605,7 @@ case $opt in
 #15 | 15) clear ; m-ssws ;;
 22 | 22) clear ; running;;
 23 | 23) clear ; restartservice ;;
+24 | 24) clear ; media ;;
 89 | 89) clear ; bannner ;;
 88 | 88) clear ; new ;;
 77 | 77) clear ; newx ;;
