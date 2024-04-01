@@ -12,7 +12,7 @@ cd /usr/bin
 wget -O backup "https://raw.githubusercontent.com/awanklod/reas/main/menu/backup.sh"
 wget -O restore "https://raw.githubusercontent.com/awanklod/reas/main/menu/restore.sh"
 wget -O cleaner "https://raw.githubusercontent.com/awanklod/reas/main/backup/cleaner.sh"
-wget -O xp "https://raw.githubusercontent.com/RMBL-VPN/v/main/install/xp.sh"
+wget -O xp "https://raw.githubusercontent.com/awanklod/reas/main/ssh/xp.sh"
 chmod +x /usr/bin/backup
 chmod +x /usr/bin/restore
 chmod +x /usr/bin/cleaner
