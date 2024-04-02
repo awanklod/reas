@@ -49,6 +49,7 @@ cp -r /etc/perlogin/token /root/backup/logintoken &> /dev/null
 cp -r /etc/xray/config.json /root/backup/xray &> /dev/null
 cp -r /etc/xray/ssh /root/backup/ssh &> /dev/null
 cp -r etc/trojan-go/trgo /root/backup/trgo &> /dev/null
+cp -r /etc/xray/noob /root/backup/noob &> /dev/null
 cp -r /home/vps/public_html /root/backup/public_html &> /dev/null
 cp -r /etc/xray/sshx /root/backup/sshx &> /dev/null
 cp -r /etc/vmess /root/backup/vmess &> /dev/null
