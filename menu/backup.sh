@@ -56,6 +56,7 @@ cp -r /etc/vmess /root/backup/vmess &> /dev/null
 cp -r /etc/vless /root/backup/vless &> /dev/null
 cp -r /etc/trojan /root/backup/trojan &> /dev/null
 cp -r etc/trgo /root/backup/trgo &> /dev/null
+cp -r etc/trojan-go /root/backup/trojan-go &> /dev/null
 cp -r /etc/noobz /root/backup/noobz &> /dev/null
 cp -r /etc/issue.net /root/backup/issue &> /dev/null
 cd /root
