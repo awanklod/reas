@@ -1063,7 +1063,7 @@ echo -e ""
 echo -ne " ${WH}Select menu ${COLOR1}: ${WH}"; read opt
 case $opt in
 01 |1) clear ; add-host ; exit ;;
-02 |2) clear ; speed ; exit ;;
+02 |2) clear ; speed2 ; exit ;;
 03 |3) clear ; auto-reboot ; exit ;;
 04 |4) clear ; bw ; exit ;;
 05 |5) clear ; m-webmin ; exit ;;
