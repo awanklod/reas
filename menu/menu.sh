@@ -41,126 +41,67 @@ echo -e "$COLOR1│   ${yl}Your VPS${NC} $ipsaya \033[0;36mHas been Banned ${NC}
 echo -e "$COLOR1│     ${yl}Buy access permissions for scripts${NC}          $COLOR1│"
 echo -e "$COLOR1│             \033[0;32mContact Your Admin ${NC}                 $COLOR1│"
 echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
-key
+BURIQ
 fi
 }
-function key(){
-rm -rf /root/rmbl
-echo -e  "${COLOR1}╭══════════════════════════════════════════╮${NC}"
-echo -e  "${COLOR1}│              PASWORD SCRIPT          │${NC}"
-echo -e  "${COLOR1}╰══════════════════════════════════════════╯${NC}"
-echo " "
-read -rp "Masukan Key Kamu Disini ctrl + c Exit : " -e kode
-cd
-if [ -z $kode ]; then
-echo -e "KODE SALAH SILAHKAN MASUKKAN ULANG KODENYA"
-key
-fi
-clear
-LIST=$(curl -sS https://raw.githubusercontent.com/RMBL-VPN/license/main/key | grep $kode | awk '{print $2}')
-Key=$(curl -sS https://raw.githubusercontent.com/RMBL-VPN/license/main/key | grep $kode | awk '{print $3}')
-KEY2=$(curl -sS https://raw.githubusercontent.com/RMBL-VPN/license/main/key | grep $kode | awk '{print $4}')
-ADMIN=$(curl -sS https://raw.githubusercontent.com/RMBL-VPN/license/main/key | grep $kode | awk '{print $5}')
-TOTALIP=$(curl -sS https://raw.githubusercontent.com/RMBL-VPN/license/main/key | grep $kode | awk '{print $6}')
-U2=$(curl -sS https://raw.githubusercontent.com/awanklod/reas/main/izin | grep $MYIP | awk '{print $2}')
-U3=$(curl -sS https://raw.githubusercontent.com/awanklod/reas/main/izin | grep $MYIP | awk '{print $3}')
-U4=$(curl -sS https://raw.githubusercontent.com/awanklod/reas/main/izin | grep $MYIP | awk '{print $4}')
-U5=$(curl -sS https://raw.githubusercontent.com/awanklod/reas/main/izin | grep $MYIP | awk '{print $5}')
-U6=$(curl -sS https://raw.githubusercontent.com/awanklod/reas/main/izin | grep $MYIP | awk '{print $6}')
-MYIP=$(curl -sS ipv4.icanhazip.com)
-web=$(curl -sS  http://rmb.vip.app/ress | grep $kode | awk '{print $3}')
-web2=$(curl -sS http://rmb.vip.app/ress | grep $kode | awk '{print $2}')
-web3=$(curl -sS http://rmb.vip.app/ress | grep $kode | awk '{print $4}')
-web4=$(curl -sS http://rmb.vip.app/ress | grep $kode | awk '{print $5}')
-web5=$(curl -sS http://rmb.vip.app/ress | grep $kode | awk '{print $6}')
-userscript=$(curl -sS https://pastebin.com/raw/YZFr8JDy | awk '{print $1}')
-emailscript=$(curl -sS https://pastebin.com/raw/YZFr8JDy | awk '{print $2}')
-tokenscript=$(curl -sS https://pastebin.com/raw/YZFr8JDy | awk '{print $3}')
-userkey=$(curl -sS https://pastebin.com/raw/unGxyHYK | awk '{print $1}')
-emailkey=$(curl -sS https://pastebin.com/raw/unGxyHYK | awk '{print $2}')
-tokenkey=$(curl -sS https://pastebin.com/raw/unGxyHYK | awk '{print $3}')
-if [[ $kode == $web ]]; then
-MYIP=$(curl -sS ipv4.icanhazip.com)
-hhari=$(date -d "$web3 days" +"%Y-%m-%d")
-mkdir /root/rmbl
-cd /root/rmbl
-wget https://raw.githubusercontent.com/awanklod/reas/main/izin >/dev/null 2>&1
-if [ "$U4" = "$MYIP" ]; then
-sed -i "s/### $U2 $U3 $U4 $U5/### $U2 $hhari $U4 $U5/g" /root/rmbl/ipmini
-else
-echo "### $author $hhari $MYIP $web2" >> ipmini
-fi
-sleep 0.5
-rm -rf .git
-git config --global user.email "${emailscript}" >/dev/null 2>&1
-git config --global user.name "${userscript}" >/dev/null 2>&1
-git init >/dev/null 2>&1
-git add ipmini
-git commit -m register >/dev/null 2>&1
-git branch -M main >/dev/null 2>&1
-git remote add origin https://github.com/${userscript}/permission >/dev/null 2>&1
-git push -f https://${tokenscript}@github.com/${userscript}/permission >/dev/null 2>&1
-rm -rf /root/rmbl
-rm -rf /etc/github
-clear
-elif [[ $kode == $Key ]]; then
-MYIP=$(curl -sS ipv4.icanhazip.com)
-author4=$(cat /etc/profil)
-hhari=$(date -d "$KEY2 days" +"%Y-%m-%d")
-mkdir /root/casper
-cd /root/casper
-wget https://raw.githubusercontent.com/awanklod/reas/main/izin >/dev/null 2>&1
-if [ "$U4" = "$MYIP" ]; then
-sed -i "s/### $U2 $U3 $U4 $U5/### $U2 $hhari $U4 $U5/g" /root/rmbl/ipmini
-else
-echo "### $author $hhari $MYIP $LIST" >> ipmini
-fi
-sleep 0.5
-rm -rf .git
-git config --global user.email "${emailscript}" >/dev/null 2>&1
-git config --global user.name "${userscript}" >/dev/null 2>&1
-git init >/dev/null 2>&1
-git add ipmini
-git commit -m register >/dev/null 2>&1
-git branch -M main >/dev/null 2>&1
-git remote add origin https://github.com/${userscript}/permission >/dev/null 2>&1
-git push -f https://${tokenscript}@github.com/${userscript}/permission >/dev/null 2>&1
-sleep 0.5
-rm ipmini
-wget https://raw.githubusercontent.com/RMBL-VPN/license/main/key >/dev/null 2>&1
-if [ "$ADMIN" = "ON" ]; then
-sed -i "/^### $LIST $Key $KEY2 $ADMIN $TOTALIP/d" /root/rmbl/key
-else
-sed -i "/^### $LIST $Key $KEY2/d" /root/rmbl/key
-fi
-sleep 0.5
-rm -rf .git
-git config --global user.email "${emailkey}" >/dev/null 2>&1
-git config --global user.name "${userkey}" >/dev/null 2>&1
-git init >/dev/null 2>&1
-git add key
-git commit -m register >/dev/null 2>&1
-git branch -M main >/dev/null 2>&1
-git remote add origin https://github.com/${userkey}/license >/dev/null 2>&1
-git push -f https://${tokenkey}@github.com/${userkey}/license >/dev/null 2>&1
-rm -rf /root/rmbl
-rm -rf /etc/github
-else
-echo -e "KODE SALAH SILAHKAN MASUKKAN ULANG KODENYA"
-sleep 1
-key
-fi
-echo -e  "${COLOR1}╭══════════════════════════════════════════╮${NC}"
-echo -e  "${COLOR1}│              INFO LICENSE KEY            │${NC}"
-echo -e  "${COLOR1}╰══════════════════════════════════════════╯${NC}"
-echo -e "SUCCES MASUKKAN KEY SILAHKAN DITUNGGU"
-echo -e "2 MENIT AGAR SERVER KEREFRESH"
-read -n 1 -s -r -p "Press any key to Exit"
-systemctl restart xray
-reboot
-exit
-clear
+BURIQ () {
+    curl -sS https://raw.githubusercontent.com/awanklod/reas/main/izin > /root/tmp
+    data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
+    for user in "${data[@]}"
+    do
+    exp=( `grep -E "^### $user" "/root/tmp" | awk '{print $3}'` )
+    d1=(`date -d "$exp" +%s`)
+    d2=(`date -d "$biji" +%s`)
+    exp2=$(( (d1 - d2) / 86400 ))
+    if [[ "$exp2" -le "0" ]]; then
+    echo $user > /etc/.$user.ini
+    else
+    rm -f /etc/.$user.ini > /dev/null 2>&1
+    fi
+    done
+    rm -f /root/tmp
 }
+
+MYIP=$(curl -sS ipv4.icanhazip.com)
+Name=$(curl -sS https://raw.githubusercontent.com/awanklod/reas/main/izin | grep $MYIP | awk '{print $2}')
+echo $Name > /usr/local/etc/.$Name.ini
+CekOne=$(cat /usr/local/etc/.$Name.ini)
+
+Bloman () {
+if [ -f "/etc/.$Name.ini" ]; then
+CekTwo=$(cat /etc/.$Name.ini)
+    if [ "$CekOne" = "$CekTwo" ]; then
+        res="Expired"
+    fi
+else
+res="Permission Accepted..."
+fi
+}
+
+PERMISSION () {
+    MYIP=$(curl -sS ipv4.icanhazip.com)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/awanklod/reas/main/izin | awk '{print $4}' | grep $MYIP)
+    if [ "$MYIP" = "$IZIN" ]; then
+    Bloman
+    else
+    res="Permission Denied!"
+    fi
+    BURIQ
+}
+red='\e[1;31m'
+green='\e[1;32m'
+NC='\e[0m'
+green() { echo -e "\\033[32;1m${*}\\033[0m"; }
+red() { echo -e "\\033[31;1m${*}\\033[0m"; }
+PERMISSION
+
+if [ "$res" = "Expired" ]; then
+Exp="\e[36mExpired\033[0m"
+else
+Exp=$(curl -sS https://raw.githubusercontent.com/awanklod/reas/main/izin | grep $MYIP | awk '{print $3}')
+fi
+
+
 madmin=$(curl -sS https://raw.githubusercontent.com/awanklod/reas/main/izin | grep $MYIP | awk '{print $5}')
 checking_sc
 cd
