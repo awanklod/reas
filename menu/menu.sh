@@ -41,7 +41,7 @@ echo -e "$COLOR1│   ${yl}Your VPS${NC} $ipsaya \033[0;36mHas been Banned ${NC}
 echo -e "$COLOR1│     ${yl}Buy access permissions for scripts${NC}          $COLOR1│"
 echo -e "$COLOR1│             \033[0;32mContact Your Admin ${NC}                 $COLOR1│"
 echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
-BURIQ
+exit
 fi
 }
 BURIQ () {
