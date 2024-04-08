@@ -869,18 +869,18 @@ sleep 2
 m-webmin
 fi
 }
-#function speed(){
-#cd
-#if [[ -e /etc/speedi ]]; then
-#speedtest
-#else
-#sudo apt-get install curl
-#curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | sudo bash
-#sudo apt-get install speedtest
-#touch /etc/speedi
-#speedtest
-#fi
-#}
+function speed(){
+cd
+if [[ -e /etc/speedi ]]; then
+speedtest
+else
+sudo apt-get install curl
+curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | sudo bash
+sudo apt-get install speedtest
+touch /etc/speedi
+speedtest
+fi
+}
 function gotopp(){
 cd
 if [[ -e /usr/bin/gotop ]]; then
@@ -1063,7 +1063,7 @@ echo -e ""
 echo -ne " ${WH}Select menu ${COLOR1}: ${WH}"; read opt
 case $opt in
 01 |1) clear ; add-host ; exit ;;
-02 |2) clear ; speed2 ; exit ;;
+02 |2) clear ; speed ; exit ;;
 03 |3) clear ; auto-reboot ; exit ;;
 04 |4) clear ; bw ; exit ;;
 05 |5) clear ; m-webmin ; exit ;;
@@ -1071,7 +1071,7 @@ case $opt in
 07 |7) clear ; m-theme ; exit ;;
 08 |8) clear ; limitspeed ; exit ;;
 09 |9) clear ; nano /etc/issue.net ; exit ;;
-10 |10) clear ; speedtest ;;
+10 |10) clear ; ins-helium ;;
 11 |11) clear ; m-bot2 ; exit ;;
 12 |12) clear ; certv2ray ; exit ;;
 13 |13) clear ; gotopp ; exit ;;
