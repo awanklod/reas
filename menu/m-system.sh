@@ -869,18 +869,18 @@ sleep 2
 m-webmin
 fi
 }
-function speed(){
-cd
-if [[ -e /etc/speedi ]]; then
-speedtest
-else
-sudo apt-get install curl
-curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | sudo bash
-sudo apt-get install speedtest
-touch /etc/speedi
-speedtest
-fi
-}
+#function speed(){
+#cd
+#if [[ -e /etc/speedi ]]; then
+#speedtest
+#else
+#sudo apt-get install curl
+#curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | sudo bash
+#sudo apt-get install speedtest
+#touch /etc/speedi
+#speedtest
+#fi
+#}
 function gotopp(){
 cd
 if [[ -e /usr/bin/gotop ]]; then
@@ -1032,12 +1032,12 @@ fi
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
 }
-function speed2(){
-apt install -y neofecth >/dev/null
-clear
-neofetch
-speedtest
-}
+#function speed2(){
+#apt install -y neofecth >/dev/null
+#clear
+#neofetch
+#speedtest
+#}
 function nameauthor(){
 read -rp "Input Your New Name : " -e name
 echo "$name" > /etc/profil
