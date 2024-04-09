@@ -219,7 +219,15 @@ clear
 echo -e "$COLOR1╭═══════════════════════════════════════════════════╮${NC}"
 echo -e "$COLOR1│ ${NC}${COLBG1}              ${WH}• DELETE NOOBZ •                   ${NC}$COLOR1 │ $NC"
 echo -e "$COLOR1╰═══════════════════════════════════════════════════╯${NC}"
-grep -E "^### " "/etc/xray/noob" | cut -d ' ' -f 2-3 | nl -s ') '
+mna=$(grep -e "^### " "/etc/xray/noob" | cut -d ' ' -f 2-3 | column -t | sort | uniq)
+clear
+echo "
+==============
+Delete Account
+==============
+$mna
+=============
+"
 read -p "username :" user
 if [ -z $user ]; then
 menu
