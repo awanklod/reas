@@ -338,10 +338,12 @@ netfilter-persistent reload
 cd /usr/bin
 wget -O issue "https://raw.githubusercontent.com/awanklod/reas/main/ssh/issue.net"
 wget -O m-theme "https://raw.githubusercontent.com/awanklod/reas/main/menu/m-theme.sh"
+wget -O speedtest "https://raw.githubusercontent.com/awanklod/reas/main/ssh/speedtest_cli.py"
 wget -O xp "https://raw.githubusercontent.com/awanklod/reas/main/ssh/xp.sh"
 
 chmod +x issue
 chmod +x m-theme
+chmod +x speedtest
 chmod +x xp
 cd
 
