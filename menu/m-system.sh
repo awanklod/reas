@@ -1032,12 +1032,12 @@ fi
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
 }
-#function speed2(){
-#apt install -y neofecth >/dev/null
-#clear
-#neofetch
-#speedtest
-#}
+function speed2(){
+apt install -y neofecth >/dev/null
+clear
+neofetch
+speedtest
+}
 function nameauthor(){
 read -rp "Input Your New Name : " -e name
 echo "$name" > /etc/profil
@@ -1050,7 +1050,7 @@ echo -e " $COLOR1║${NC}${COLBG1}                 ${WH}• SYSTEM MENU •     
 echo -e " $COLOR1╚══════════════════════════════════════════════════════╝${NC}"
 echo -e " $COLOR1╔══════════════════════════════════════════════════════╗${NC}"
 echo -e " $COLOR1║${NC} ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}CHANGE DOMAIN   ${WH}    ${WH}[${COLOR1}09${WH}]${NC} ${COLOR1}• ${WH}CHANGE BANNER ${WH}     $COLOR1║ $NC"
-echo -e " $COLOR1║${NC} ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}SPEEDTEST   ${WH}        ${WH}[${COLOR1}10${WH}]${NC} ${COLOR1}• ${WH}SPEEDTEST      ${WH}    $COLOR1║ $NC"
+echo -e " $COLOR1║${NC} ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}SPEEDTEST   ${WH}        ${WH}[${COLOR1}10${WH}]${NC} ${COLOR1}• ${WH}INSTALL ADBLOCK ${WH}   $COLOR1║ $NC"
 echo -e " $COLOR1║${NC} ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}AUTO REBOOT   ${WH}      ${WH}[${COLOR1}11${WH}]${NC} ${COLOR1}• ${WH}CHANGE  BOT INFO${WH}   $COLOR1║ $NC"
 echo -e " $COLOR1║${NC} ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}CHECK BANDWITH${WH}      ${WH}[${COLOR1}12${WH}]${NC} ${COLOR1}• ${WH}FIX NGINX OFF${WH}      $COLOR1║ $NC"
 echo -e " $COLOR1║${NC} ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH}INSTALL WEBMIN${WH}      ${WH}[${COLOR1}13${WH}]${NC} ${COLOR1}• ${WH}CEK PERFORMA VPS ${WH}  $COLOR1║ $NC"
@@ -1063,7 +1063,7 @@ echo -e ""
 echo -ne " ${WH}Select menu ${COLOR1}: ${WH}"; read opt
 case $opt in
 01 |1) clear ; add-host ; exit ;;
-02 |2) clear ; speed ; exit ;;
+02 |2) clear ; speedtest ; exit ;;
 03 |3) clear ; auto-reboot ; exit ;;
 04 |4) clear ; bw ; exit ;;
 05 |5) clear ; m-webmin ; exit ;;
