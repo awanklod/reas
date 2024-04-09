@@ -215,21 +215,21 @@ menu
 
 
 function delete(){
+NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/noob")
+if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
 clear
-echo -e "$COLOR1╭═══════════════════════════════════════════════════╮${NC}"
-echo -e "$COLOR1│ ${NC}${COLBG1}              ${WH}• DELETE NOOBZ •                   ${NC}$COLOR1 │ $NC"
-echo -e "$COLOR1╰═══════════════════════════════════════════════════╯${NC}"
-grep -E "^### " "/etc/xray/noob" | cut -d ' ' -f 2-3 | nl -s ') '
-read -p "username :" user
-noobzvpns --remove-user $user
-expi=`date -d "$exp days" +"%Y-%m-%d"`
-clear
-echo -e "$COLOR1╭═══════════════════════════════════════════════════╮${NC}"
-echo -e "$COLOR1│ ${NC}${COLBG1}              ${WH}• DELETE NOOBZ •                   ${NC}$COLOR1 │ $NC"
-echo -e "$COLOR1╰═══════════════════════════════════════════════════╯${NC}"
-echo -e ""
-echo -e "$WH USERNAME $user HAS BEEN DELETE $NC"
-echo -e "$WH EXPIRED : $expi $NC"
+echo -e "$COLOR1╭═════════════════════════════════════════════════╮${NC}"
+echo -e "$COLOR1│${NC} ${COLBG1}             ${WH}• DELETE USERS •                   │${NC}$COLOR1$NC"
+echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
+echo -e "$COLOR1╭═════════════════════════════════════════════════╮${NC}"
+echo -e "$COLOR1│                                                 │"
+echo -e "$COLOR1│${WH} User Tidak Ada!                              $COLOR1   │"
+echo -e "$COLOR1│                                                 │"
+echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
+echo ""
+read -n 1 -s -r -p "Press any key to back on menu"
+m-noobz
+fi
 echo -e ""
 TEXT="
 <code>◇━━━━━━━━━━━━━━◇</code>
