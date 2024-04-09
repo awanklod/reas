@@ -73,13 +73,9 @@ if [ ! -e /etc/sf/limit/noobs/ip/ ]; then
   mkdir -p /etc/sf/limit/noobs/ip/
 fi
 echo "$ip" > /etc/sf/limit/noobs/ip/$user
-
 noobzvpns --add-user $user $pass --expired-user $user $exp
 expi=`date -d "$exp days" +"%Y-%m-%d"`
-useradd -e `date -d "$exp days" +"%Y-%m-%d"` -s /bin/false -M $user
-exp="$(chage -l $user | grep "Account expires" | awk -F": " '{print $2}')"
-echo -e "$pass\n$pass\n"|passwd $user &> /dev/null
-echo -e "### $user $expi $pass" >> /etc/xray/noob
+echo -e "### $user $pass $expi" >> /etc/xray/noob
 clear
 cat > /home/vps/public_html/noobzvpns-$user.txt <<-END
 ◇━━━━━━━━━━━━━━━━━◇
