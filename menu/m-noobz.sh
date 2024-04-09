@@ -60,7 +60,7 @@ function create(){
 clear
 
 echo -e "$COLOR1╭═════════════════════════════════════════════════╮${NC}"
-echo -e "$COLOR1│ ${NC}${COLBG1}              ${WH}• SSH PANEL MENU •               ${NC}$COLOR1 │ $NC"
+echo -e "$COLOR1│ ${NC}${COLBG1}              ${WH}• noob PANEL MENU •               ${NC}$COLOR1 │ $NC"
 echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
 read -p "Username: " user
 read -p "Password: " pass
@@ -173,7 +173,7 @@ user2=$(echo "$user" | cut -c 1-3)
 TIME2=$(date +'%Y-%m-%d %H:%M:%S')
 TEXT2="
 <code>◇━━━━━━━━━━━━━━◇</code>
-<code>   TRANSAKSI SSH SUCCES </code>
+<code>   TRANSAKSI noob SUCCES </code>
 <code>◇━━━━━━━━━━━━━━◇</code>
 <code>DOMAIN   :</code> <code>${domain} </code>
 <code>ISP      :</code> <code>$ISP $CITY </code>
@@ -230,19 +230,49 @@ echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 m-noobz
 fi
-echo -e ""
+echo -e "$COLOR1╭═════════════════════════════════════════════════╮${NC}"
+echo -e "$COLOR1│${NC} ${COLBG1}             ${WH}• DELETE USERS •                   │${NC}$COLOR1$NC"
+echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
+echo -e "$COLOR1╭═════════════════════════════════════════════════╮${NC}"
+echo -e "$COLOR1│ ${WH}Silahkan Pilih User Yang Mau Didelete     $COLOR1      │"
+echo -e "$COLOR1│ ${WH}ketik [0] kembali kemenu                     $COLOR1   │"
+echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
+grep -E "^### " "/etc/xray/noob" | cut -d ' ' -f 2-3 | nl -s ') '
+until [[ ${CLIENT_NUMBER} -ge 1 && ${CLIENT_NUMBER} -le ${NUMBER_OF_CLIENTS} ]]; do
+if [[ ${CLIENT_NUMBER} == '1' ]]; then
+read -rp "Select one client [1]: " CLIENT_NUMBER
+else
+read -rp "Select one client [1-${NUMBER_OF_CLIENTS}]: " CLIENT_NUMBER
+if [[ ${CLIENT_NUMBER} == '0' ]]; then
+m-noobz
+fi
+fi
+done
+Pengguna=$(grep -E "^### " "/etc/xray/noob" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
+Days=$(grep -E "^### " "/etc/xray/noob" | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
+Pass=$(grep -E "^### " "/etc/xray/noob" | cut -d ' ' -f 4 | sed -n "${CLIENT_NUMBER}"p)
+sed -i "/^### $Pengguna $Days $Pass/d" /etc/xray/noob
+rm /home/vps/public_html/noob-$Pengguna.txt >/dev/null 2>&1
+rm /etc/xray/noob/${Pengguna}IP >/dev/null 2>&1
+rm /etc/xray/noob/${Pengguna}login >/dev/null 2>&1
+if getent passwd $Pengguna > /dev/null 2>&1; then
+userdel $Pengguna > /dev/null 2>&1
+echo -e "User $Pengguna was removed."
+else
+echo -e "Failure: User $Pengguna Not Exist."
+fi
 TEXT="
 <code>◇━━━━━━━━━━━━━━◇</code>
-<code>  DELETE NOOBZVPNS</code>
+<b>  DELETE noob OVPN</b>
 <code>◇━━━━━━━━━━━━━━◇</code>
-<code>DOMAIN   :</code> <code>${domain} </code>
-<code>ISP      :</code> <code>$ISP $CITY </code>
-<code>USERNAME :</code> <code>$user</code>
-<code>EXPIRED  :</code> <code>$expi </code>
+<b>DOMAIN   :</b> <code>${domain} </code>
+<b>ISP      :</b> <code>$ISP $CITY </code>
+<b>USERNAME :</b> <code>$Pengguna </code>
+<b>EXPIRED  :</b> <code>$Days </code>
 <code>◇━━━━━━━━━━━━━━◇</code>
 <i>Succes Delete This User...</i>
 "
-curl -s --max-time $TIMES -d "chat_id=$CHATIDNEW&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
+curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 cd
 if [ ! -e /etc/tele ]; then
 echo -ne
