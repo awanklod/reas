@@ -79,7 +79,7 @@ hariini=`date -d "0 days" +"%Y-%m-%d"`
 echo -e "### $user $exp" >> /etc/trojan-go/trgo
 systemctl restart trojan-go.service
 link="trojan-go://${uuid}@isi_bug_disini:2087/?sni=${domain}&type=ws&host=${domain}&path=%2Ftrojango#$user"
-link1="trojan://${uuid}@isi_bug_disini:$2087/?sni=${domain}&type=ws&host=${domain}&path=%2Ftrojango#$user"
+link1="trojan://${uuid}@isi_bug_disini:2087/?sni=${domain}&type=ws&host=${domain}&path=%2Ftrojango#$user"
 clear
 echo -e ""
 echo -e "=======-TROJAN-GO-======="
