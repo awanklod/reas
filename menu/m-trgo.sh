@@ -78,7 +78,8 @@ exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 hariini=`date -d "0 days" +"%Y-%m-%d"`
 echo -e "### $user $exp" >> /etc/trojan-go/trgo
 systemctl restart trojan-go.service
-linktls="trojan-go://${uuid}@${domain}:2087/?sni=${domain}&type=ws&host=${domain}&path=/trojango&encryption=none#$user"
+link="trojan-go://${uuid}@isi_bug_disini:2087/?sni=${domain}&type=ws&host=${domain}&path=%2Ftrojango#$user"
+link1="trojan://${uuid}@isi_bug_disini:$2087/?sni=${domain}&type=ws&host=${domain}&path=%2Ftrojango#$user"
 clear
 echo -e ""
 echo -e "=======-TROJAN-GO-======="
@@ -92,7 +93,8 @@ echo -e "Path       : /trojango"
 echo -e "Created    : $hariini"
 echo -e "Expired    : $exp"
 echo -e "========================="
-echo -e "Link TrGo TLS  : ${linktls}"
+echo -e "Link TrGo TLS  : ${link}"
+echo -e "Link TrGo (v2rayNG)	: ${link1}"
 echo -e "========================="
 echo -e ""
 read -n 1 -s -r -p "Press any key to back on menu"
