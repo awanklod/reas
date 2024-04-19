@@ -493,6 +493,7 @@ case $opt in
 89 | 89) clear ; bannner ;;
 88 | 88) clear ; new ;;
 77 | 77) clear ; newx ;;
+99 | 99) clear ; passwd ;;
 100) clear ; $up2u ;;
 00 | 0) clear ; menu ;;
 *) clear ; menu ;;
