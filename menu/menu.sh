@@ -44,7 +44,6 @@ echo -e "$COLOR1╰════════════════════�
 exit
 fi
 }
-checking_sc
 madmin=$(curl -sS https://raw.githubusercontent.com/awanklod/reas/main/izin | grep $MYIP | awk '{print $5}')
 checking_sc
 cd
