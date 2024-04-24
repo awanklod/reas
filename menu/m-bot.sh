@@ -1,8 +1,8 @@
 #!/bin/bash
-ipsaya=$(wget -qO- ipv4.icanhazip.com)
+ipsaya=$(curl -sS ipv4.icanhazip.com)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/awanklod/reas/main/izin"
+data_ip="https://raw.githubusercontent.com/awanklod/izin_reaz/main/izin"
 checking_sc() {
     useexp=$(curl -sS $data_ip | grep $ipsaya | awk '{print $3}')
     if [[ $date_list < $useexp ]]; then
