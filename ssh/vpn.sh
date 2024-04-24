@@ -12,7 +12,7 @@ CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
 # izin
-MYIP=$(wget -qO- ipinfo.io/ip);
+MYIP=$(wget -qO- ipv4.icanhazip.com);
 echo "Checking VPS"
 CEKEXPIRED () {
     today=$(date -d +1day +%Y-%m-%d)
