@@ -42,7 +42,7 @@ url="raw.githubusercontent.com/awanklod/reas/main/ssh"
 # initialisasi var
 export DEBIAN_FRONTEND=noninteractive
 OS=`uname -m`;
-MYIP=$(wget -qO- ipinfo.io/ip);
+MYIP=$(wget -qO- ipv4.icanhazip.com);
 domain=$(cat /root/domain)
 #MYIP2="s/xxxxxxxxx/$MYIP/g";
 MYIP2="s/xxxxxxxxx/$domain/g";
