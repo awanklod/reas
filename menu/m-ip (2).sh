@@ -5,7 +5,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 ipsaya=$(wget -qO- ipv4.icanhazip.com)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/SatanFusionOfficial/permission/main/ip"
+data_ip="https://raw.githubusercontent.com/awanklod/izin_reaz/main/izin"
 checking_sc() {
   useexp=$(wget -qO- $data_ip | grep $ipsaya | awk '{print $3}')
   if [[ $date_list < $useexp ]]; then
@@ -31,7 +31,7 @@ Repo1="https://raw.githubusercontent.com/valkry7/Regist/MONSTER/"
 export MYIP=$( curl -s https://ipinfo.io/ip/ )
 SELLER=$(curl -sS ${Repo1}ip | grep $MYIP | awk '{print $2}')
 Exp100=$(curl -sS ${Repo1}ip | grep $MYIP | awk '{print $3}')
-data_ip="https://raw.githubusercontent.com/SatanFusionOfficial/permission/main/ip"
+data_ip="https://raw.githubusercontent.com/awanklod/izin_reaz/main/izin"
 d2=$(date -d "$date_list" +"+%s")
 d1=$(date -d "$Exp" +"+%s")
 dayleft=$(( ($d1 - $d2) / 86400 ))
