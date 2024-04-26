@@ -31,7 +31,7 @@ useexp=$(curl -sS $data_ip | grep $ipsaya | awk '{print $3}')
 if [[ $date_list < $useexp ]]; then
 echo -ne
 else
-systemctl stop nginx
+#systemctl stop nginx
 echo -e "$COLOR1╭═════════════════════════════════════════════════╮${NC}"
 echo -e "$COLOR1│${NC}${COLBG1}          ${WH}• AUTOSCRIPT PREMIUM •                 ${NC}$COLOR1│ $NC"
 echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
@@ -44,8 +44,8 @@ echo -e "$COLOR1╰════════════════════�
 exit
 fi
 }
-madmin=$(curl -sS https://raw.githubusercontent.com/awanklod/izin_reaz/main/izin | grep $MYIP | awk '{print $5}')
 checking_sc
+madmin=$(curl -sS https://raw.githubusercontent.com/awanklod/izin_reaz/main/izin | grep $MYIP | awk '{print $5}')
 cd
 if [ ! -e /etc/per/id ]; then
 mkdir -p /etc/per
@@ -222,19 +222,19 @@ total_ssh=$(grep -c -E "^### " "/etc/xray/ssh")
 jumlah_noobz=$(grep -c -E "^### " "/etc/xray/noob")
 # TOTAL CREATE ACC TROJAN-GO
 jumlah_trgo=$(grep -c -E "^### " "/etc/trojan-go/trgo")
-function m-ip2(){
-clear
-cd
-if [[ -e /etc/github/api ]]; then
-m-ip
-else
-mkdir /etc/github
-echo "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" > /etc/github/api
-echo "vpnrmbl@gmail.com" > /etc/github/email
-echo "RMBL-VPN" > /etc/github/username
-m-ip
-fi
-}
+#function m-ip2(){
+#clear
+#cd
+#if [[ -e /etc/github/api ]]; then
+#m-ip
+#else
+#mkdir /etc/github
+#echo "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" > /etc/github/api
+#echo "vpnrmbl@gmail.com" > /etc/github/email
+#echo "RMBL-VPN" > /etc/github/username
+#m-ip
+#fi
+#}
 uphours=`uptime -p | awk '{print $2,$3}' | cut -d , -f1`
 upminutes=`uptime -p | awk '{print $4,$5}' | cut -d , -f1`
 uptimecek=`uptime -p | awk '{print $6,$7}' | cut -d , -f1`
