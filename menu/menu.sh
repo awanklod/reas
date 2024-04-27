@@ -44,8 +44,8 @@ echo -e "$COLOR1╰════════════════════�
 exit
 fi
 }
-checking_sc
-madmin=$(curl -sS https://raw.githubusercontent.com/awanklod/izin_reaz/main/izin | grep $MYIP | awk '{print $5}')
+#checking_sc
+#madmin=$(curl -sS https://raw.githubusercontent.com/awanklod/izin_reaz/main/izin | grep $MYIP | awk '{print $5}')
 #cd
 #if [ ! -e /etc/per/id ]; then
 #mkdir -p /etc/per
