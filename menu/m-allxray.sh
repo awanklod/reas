@@ -10,7 +10,7 @@ COLBG1="$(cat /etc/rmbl/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g
 WH='\033[1;37m'
 ###########- END COLOR CODE -##########
 
-ipsaya=$(curl -sS ipv4.icanhazip.com)
+ipsaya=$(curl -sS ipinfo.io/ip)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
 data_ip="https://raw.githubusercontent.com/awanklod/izin_reaz/main/izin"
