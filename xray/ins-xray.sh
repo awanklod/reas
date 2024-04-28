@@ -54,31 +54,36 @@ echo -e "
 
 date
 echo ""
-domain=$(cat /root/domain)
-sleep 1
-mkdir -p /etc/xray 
+cd
+if [[ -e /etc/xray/domain ]]; then
+domain=$(cat /etc/xray/domain)
+else
+domain="casper1.dev"
+fi
+sleep 0.5
+mkdir -p /etc/xray
 echo -e "[ ${green}INFO${NC} ] Checking... "
 apt install iptables iptables-persistent -y
-sleep 1
+sleep 0.5
 echo -e "[ ${green}INFO$NC ] Setting ntpdate"
-ntpdate pool.ntp.org 
+ntpdate pool.ntp.org
 timedatectl set-ntp true
-sleep 1
+sleep 0.5
 echo -e "[ ${green}INFO$NC ] Enable chronyd"
 systemctl enable chronyd
 systemctl restart chronyd
-sleep 1
+sleep 0.5
 echo -e "[ ${green}INFO$NC ] Enable chrony"
 systemctl enable chrony
 systemctl restart chrony
 timedatectl set-timezone Asia/Jakarta
-sleep 1
+sleep 0.5
 echo -e "[ ${green}INFO$NC ] Setting chrony tracking"
 chronyc sourcestats -v
 chronyc tracking -v
 echo -e "[ ${green}INFO$NC ] Setting dll"
 apt clean all && apt update
-apt install curl socat xz-utils wget apt-transport-https gnupg gnupg2 gnupg1 dnsutils lsb-release -y 
+apt install curl socat xz-utils wget apt-transport-https gnupg gnupg2 gnupg1 dnsutils lsb-release -y
 apt install socat cron bash-completion ntpdate -y
 ntpdate pool.ntp.org
 apt -y install chrony
