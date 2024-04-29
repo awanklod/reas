@@ -675,7 +675,7 @@ clear
 }
 
 res6() {
-#wget https://raw.githubusercontent.com/awanklod/reas/main/ohp/ohp.sh && chmod +x ohp.sh && ./ohp.sh
+wget https://raw.githubusercontent.com/awanklod/reas/main/ohp/ohp.sh && chmod +x ohp.sh && ./ohp.sh
 clear
 }
 
