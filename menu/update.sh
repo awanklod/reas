@@ -11,7 +11,7 @@ wget -q -O /usr/bin/backup "https://raw.githubusercontent.com/awanklod/reas/main
 wget -q -O /usr/bin/addnoobz "https://raw.githubusercontent.com/awanklod/reas/main/noobzvpns/addnoobz.sh" && chmod +x /usr/bin/addnoobz
 wget -q -O /usr/bin/cek-noobz "https://raw.githubusercontent.com/awanklod/reas/main/noobzvpns/cek-noobz.sh" && chmod +x /usr/bin/cek-noobz
 wget -q -O /usr/bin/m-noobz "https://raw.githubusercontent.com/awanklod/reas/main/menu/m-noobz.sh" && chmod +x /usr/bin/m-noobz
-#wget -q -O /usr/bin/m-ip "https://raw.githubusercontent.com/awanklod/reas/main/menu/m-ip.sh" && chmod +x /usr/bin/m-ip
+wget -q -O /usr/bin/m-ip "https://raw.githubusercontent.com/awanklod/reas/main/menu/m-ip.sh" && chmod +x /usr/bin/m-ip
 wget -q -O /usr/bin/m-bot "https://raw.githubusercontent.com/awanklod/reas/main/menu/m-bot.sh" && chmod +x /usr/bin/m-bot
 wget -q -O /usr/bin/update "https://raw.githubusercontent.com/awanklod/reas/main/menu/update.sh" && chmod +x /usr/bin/update
 wget -q -O /usr/bin/m-theme "https://raw.githubusercontent.com/awanklod/reas/main/menu/m-theme.sh" && chmod +x /usr/bin/m-theme
@@ -24,7 +24,7 @@ wget -q -O /usr/bin/m-ssws "https://raw.githubusercontent.com/awanklod/reas/main
 wget -q -O /usr/bin/running "https://raw.githubusercontent.com/awanklod/reas/main/menu/running.sh" && chmod +x /usr/bin/running
 wget -q -O /usr/bin/m-backup "https://raw.githubusercontent.com/awanklod/reas/main/menu/m-backup.sh" && chmod +x /usr/bin/m-backup
 wget -q -O /usr/bin/m-update "https://raw.githubusercontent.com/awanklod/reas/main/menu/m-update.sh" && chmod +x /usr/bin/m-update
-#wget -q -O /usr/bin/speedtest "https://raw.githubusercontent.com/awanklod/reas/main/ssh/speedtest_cli.py" && chmod +x /usr/bin/speedtest
+wget -q -O /usr/bin/speedtest "https://raw.githubusercontent.com/awanklod/reas/main/ssh/speedtest_cli.py" && chmod +x /usr/bin/speedtest
 wget -q -O /usr/bin/bckpbot "https://raw.githubusercontent.com/awanklod/reas/main/menu/bckpbot.sh" && chmod +x /usr/bin/bckpbot
 wget -q -O /usr/bin/tendang "https://raw.githubusercontent.com/awanklod/reas/main/menu/tendang.sh" && chmod +x /usr/bin/tendang
 wget -q -O /usr/bin/bottelegram "https://raw.githubusercontent.com/awanklod/reas/main/menu/bottelegram.sh" && chmod +x /usr/bin/bottelegram
@@ -36,7 +36,7 @@ wget -q -O /usr/bin/trialtrojan "https://raw.githubusercontent.com/awanklod/reas
 wget -q -O /usr/bin/trialssh "https://raw.githubusercontent.com/awanklod/reas/main/menu/trialssh.sh" && chmod +x /usr/bin/trialssh
 wget -q -O /usr/bin/autocpu "https://raw.githubusercontent.com/awanklod/reas/main/menu/autocpu.sh" && chmod +x /usr/bin/autocpu
 wget -q -O /usr/bin/media "https://raw.githubusercontent.com/awanklod/reas/main/menu/media.sh" && chmod +x /usr/bin/media
-#wget -q -O /usr/bin/bantwidth "https://raw.githubusercontent.com/awanklod/reas/main/menu/bantwidth" && chmod +x /usr/bin/bantwidth
+wget -q -O /usr/bin/bantwidth "https://raw.githubusercontent.com/awanklod/reas/main/menu/bantwidth" && chmod +x /usr/bin/bantwidth
 echo -e " [INFO] Download File Successfully"
 sleep 2
 exit
