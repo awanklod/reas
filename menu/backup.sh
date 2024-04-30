@@ -48,7 +48,7 @@ cp -r /etc/perlogin/id /root/backup/loginid &> /dev/null
 cp -r /etc/perlogin/token /root/backup/logintoken &> /dev/null
 cp -r /etc/xray/config.json /root/backup/xray &> /dev/null
 cp -r /etc/xray/ssh /root/backup/ssh &> /dev/null
-#cp -r /etc/trojan-go/config.json /root/backup/trojan-go &> /dev/null
+cp -r /etc/trojan-go/config.json /root/backup/trojan-go &> /dev/null
 #cp -r /etc/trojan-go/trgo /root/backup/trgo &> /dev/null
 cp -r /etc/xray/noob /root/backup/noob &> /dev/null
 cp -r /home/vps/public_html /root/backup/public_html &> /dev/null
@@ -57,7 +57,7 @@ cp -r /etc/vmess /root/backup/vmess &> /dev/null
 cp -r /etc/vless /root/backup/vless &> /dev/null
 cp -r /etc/trojan /root/backup/trojan &> /dev/null
 #cp -r /etc/trgo /root/backup/trgo &> /dev/null
-#cp -r /etc/trojan-go /root/backup/trojan-go &> /dev/null
+cp -r /etc/trojan-go /root/backup/trojan-go &> /dev/null
 cp -r /etc/noobz /root/backup/noobz &> /dev/null
 cp -r /etc/issue.net /root/backup/issue &> /dev/null
 cd /root
