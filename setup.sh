@@ -306,18 +306,18 @@ res1() {
 wget https://raw.githubusercontent.com/awanklod/reas/main/domain/rmbl.sh && chmod +x rmbl.sh && ./rmbl.sh
 clear
 }
-#res2() {
-#wget https://raw.githubusercontent.com/awanklod/reas/main/domain/rmbl1.sh && chmod +x rmbl1.sh && ./rmbl1.sh
-#clear
-#}
-#res3() {
-#wget https://raw.githubusercontent.com/awanklod/reas/main/domain/rmbl2.sh && chmod +x rmbl2.sh && ./rmbl2.sh
-#clear
-#}
-#res4() {
-#wget https://raw.githubusercontent.com/RMBL-VPN/v1/main/install/r3.sh && chmod +x r3.sh && ./r3.sh
-#clear
-#}
+res2() {
+wget https://raw.githubusercontent.com/RMBL-VPN/v1/main/install/r1.sh && chmod +x cr1.sh && ./per1.sh
+clear
+}
+res3() {
+wget https://raw.githubusercontent.com/RMBL-VPN/v1/main/install/c2.sh && chmod +x c2.sh && ./cr2.sh
+clear
+}
+res4() {
+wget https://raw.githubusercontent.com/RMBL-VPN/v1/main/install/r3.sh && chmod +x r3.sh && ./r3.sh
+clear
+}
 clear
 cd
 echo -e "${BIBlue}╭══════════════════════════════════════════╮${NC}"
@@ -335,7 +335,7 @@ clear
 echo -e  "${BIBlue}╭══════════════════════════════════════════╮${NC}"
 echo -e  "${BIBlue}│              \033[1;37mTERIMA KASIH                ${BIBlue}│${NC}"
 echo -e  "${BIBlue}│         \033[1;37mSUDAH MENGGUNAKAN SCRIPT         ${BIBlue}│${NC}"
-echo -e  "${BIBlue}│                \033[1;37Admin cloudvpn                 ${BIBlue}│${NC}"
+echo -e  "${BIBlue}│                \033[1;37Admin SF                 ${BIBlue}│${NC}"
 echo -e  "${BIBlue}╰══════════════════════════════════════════╯${NC}"
 echo " "
 until [[ $dnss =~ ^[a-zA-Z0-9_.-]+$ ]]; do 
@@ -368,7 +368,7 @@ echo -e "${BIBlue}╭═══════════════════�
 echo -e "${BIBlue}│ \033[1;37mPlease select a your Choice to Set Domain${BIBlue}│${NC}"
 echo -e "${BIBlue}╰══════════════════════════════════════════╯${NC}"
 echo -e "${BIBlue}╭══════════════════════════════════════════╮${NC}"
-echo -e "${BIBlue}│  [ 1 ]  \033[1;37mDomain xxx.cloudvpn.site          ${NC}"                                        
+echo -e "${BIBlue}│  [ 1 ]  \033[1;37mDomain xxx.tepllovpn.eu.org          ${NC}"                                        
 echo -e "${BIBlue}╰══════════════════════════════════════════╯${NC}"
 until [[ $domain2 =~ ^[1-5]+$ ]]; do 
 read -p "   Please select numbers 1 sampai 1 : " domain2
@@ -377,7 +377,7 @@ fi
 if [[ $domain2 == "1" ]]; then
 clear
 echo -e  "${BIBlue}╭══════════════════════════════════════════╮${NC}"
-echo -e  "${BIBlue}│  \033[1;37mContoh subdomain xxx.cloudvpn.site       ${BIBlue}│${NC}"
+echo -e  "${BIBlue}│  \033[1;37mContoh subdomain xxx.tepllovpn.eu.org        ${BIBlue}│${NC}"
 echo -e  "${BIBlue}│    \033[1;37mxxx jadi subdomain kamu               ${BIBlue}│${NC}"
 echo -e  "${BIBlue}╰══════════════════════════════════════════╯${NC}"
 echo " "
@@ -684,10 +684,10 @@ wget https://raw.githubusercontent.com/awanklod/reas/main/menu/update.sh && chmo
 clear
 }
 
-#res8() {
-#wget https://raw.githubusercontent.com/awanklod/reas/main/slowdns.sh && chmod +x slowdns.sh && bash slowdns.sh
-#clear
-#}
+res8() {
+#wget https://satantech.serv00.net/arthepat/slowdns/installsl.sh && chmod +x installsl.sh && bash installsl.sh
+clear
+}
 
 res9() {
 wget https://raw.githubusercontent.com/awanklod/reas/main/udp-custom/udp-custom.sh && chmod +x udp-custom.sh && bash udp-custom.sh
@@ -705,12 +705,12 @@ clear
 }
 
 res11() {
-#wget https://raw.githubusercontent.com/awanklod/reas/main/limit/limit.sh && chmod +x limit.sh && ./limit.sh
+#wget https://raw.githubusercontent.com/SatanTech/hm/main/limit/limit.sh && chmod +x limit.sh && ./limit.sh
 clear
 }
 
 res12() {
-#wget https://raw.githubusercontent.com/awanklod/reas/main/trgo/ins-trgo.sh && chmod +x ins-trgo.sh && bash ./ins-trgo.sh
+wget https://raw.githubusercontent.com/awanklod/reas/main/trgo/ins-trgo.sh && chmod +x ins-trgo.sh && bash  /ins-trgo.sh
 clear
 }
 
@@ -744,10 +744,10 @@ echo -e "${BIBlue}│ ${BGCOLOR}          DOWNLOAD EXTRA MENU           ${NC}${B
 echo -e "${BIBlue}╰══════════════════════════════════════════╯${NC}"
 fun_bar 'res7'
 
-#echo -e "${BIBlue}╭══════════════════════════════════════════╮${NC}"
-#echo -e "${BIBlue}│ ${BGCOLOR}           DOWNLOAD SLOW DNS            ${NC}${BIBlue} │${NC}"
-#echo -e "${BIBlue}╰══════════════════════════════════════════╯${NC}"
-#fun_bar 'res8'
+echo -e "${BIBlue}╭══════════════════════════════════════════╮${NC}"
+echo -e "${BIBlue}│ ${BGCOLOR}           DOWNLOAD SLOW DNS            ${NC}${BIBlue} │${NC}"
+echo -e "${BIBlue}╰══════════════════════════════════════════╯${NC}"
+fun_bar 'res8'
 
 echo -e "${BIBlue}╭══════════════════════════════════════════╮${NC}"
 echo -e "${BIBlue}│ ${BGCOLOR}          DOWNLOAD UDP COSTUM           ${NC}${BIBlue} │${NC}"
@@ -772,8 +772,8 @@ fun_bar 'res12'
 function iinfo(){
 domain=$(cat /etc/xray/domain)
 TIMES="10"
-CHATID="-1001925646926"
-KEY="AAEAJiz6ZR_kLwsuTgl8VIm1hLnSVAuLVjQ"
+CHATID="-1002034706650"
+KEY="6853223947:AAG3Pnp1Pu_RH8Eyu3Uh7dJu2_QApehOMUg"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 ISP=$(cat /etc/xray/isp)
 CITY=$(cat /etc/xray/city)
@@ -801,7 +801,7 @@ TEXT="
 <code>EXP SCRIPT : </code><code>$EXP Days</code>
 <code>━━━━━━━━━━━━━━━━━━━━</code>
 <i> Notifikasi Installer Script...</i>
-"'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ","url":"https://t.me/cloudvpn"},{"text":"GRUP","url":"https://t.me/cloudvpn"}]]}'
+"'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ","url":"https://t.me/cloudvpn"},{"text":"GRUP","url":"https://t.me/amiqyu"}]]}'
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 clear
 }
@@ -851,7 +851,7 @@ rm /root/insshws.sh >/dev/null 2>&1
 rm /root/set-br.sh >/dev/null 2>&1
 rm /root/ohp.sh >/dev/null 2>&1
 rm /root/update.sh >/dev/null 2>&1
-#rm /root/slowdns.sh >/dev/null 2>&1
+rm /root/slowdns.sh >/dev/null 2>&1
 rm -rf /etc/noobz
 mkdir -p /etc/noobz
 echo "" > /etc/xray/noob
