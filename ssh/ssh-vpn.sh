@@ -237,11 +237,11 @@ accept = 777
 connect = 127.0.0.1:109
 
 [ws-stunnel]
-accept = 2096
+accept = 444
 connect = 700
 
 [openvpn]
-accept = 442
+accept = 990
 connect = 127.0.0.1:1194
 
 END
