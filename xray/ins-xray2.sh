@@ -1,33 +1,51 @@
 #!/bin/bash
+# ==========================================
+# Color
+RED='\033[0;31m'
+NC='\033[0m'
+GREEN='\033[0;32m'
+ORANGE='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+LIGHT='\033[0;37m'
+# ==========================================
+# Getting
+
 echo -e "
 "
 date
 echo ""
-domain=$(cat /root/domain)
-sleep 1
-mkdir -p /etc/xray 
+cd
+if [[ -e /etc/xray/domain ]]; then
+domain=$(cat /etc/xray/domain)
+else
+domain="casper1.dev"
+fi
+sleep 0.5
+mkdir -p /etc/xray
 echo -e "[ ${green}INFO${NC} ] Checking... "
 apt install iptables iptables-persistent -y
-sleep 1
+sleep 0.5
 echo -e "[ ${green}INFO$NC ] Setting ntpdate"
-ntpdate pool.ntp.org 
+ntpdate pool.ntp.org
 timedatectl set-ntp true
-sleep 1
+sleep 0.5
 echo -e "[ ${green}INFO$NC ] Enable chronyd"
 systemctl enable chronyd
 systemctl restart chronyd
-sleep 1
+sleep 0.5
 echo -e "[ ${green}INFO$NC ] Enable chrony"
 systemctl enable chrony
 systemctl restart chrony
 timedatectl set-timezone Asia/Jakarta
-sleep 1
+sleep 0.5
 echo -e "[ ${green}INFO$NC ] Setting chrony tracking"
 chronyc sourcestats -v
 chronyc tracking -v
 echo -e "[ ${green}INFO$NC ] Setting dll"
 apt clean all && apt update
-apt install curl socat xz-utils wget apt-transport-https gnupg gnupg2 gnupg1 dnsutils lsb-release -y 
+apt install curl socat xz-utils wget apt-transport-https gnupg gnupg2 gnupg1 dnsutils lsb-release -y
 apt install socat cron bash-completion ntpdate -y
 ntpdate pool.ntp.org
 apt -y install chrony
@@ -36,7 +54,7 @@ apt install curl pwgen openssl netcat cron -y
 
 
 # install xray
-sleep 1
+sleep 0.5
 echo -e "[ ${green}INFO$NC ] Downloading & Installing xray core"
 domainSock_dir="/run/xray";! [ -d $domainSock_dir ] && mkdir  $domainSock_dir
 chown www-data.www-data $domainSock_dir
@@ -50,9 +68,7 @@ touch /var/log/xray/error.log
 touch /var/log/xray/access2.log
 touch /var/log/xray/error2.log
 # / / Ambil Xray Core Version Terbaru
-bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.5.6
-
-
+bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.6.1
 
 ## crt xray
 systemctl stop nginx
@@ -74,41 +90,8 @@ echo -n '#!/bin/bash
 chmod +x /usr/local/bin/ssl_renew.sh
 if ! grep -q 'ssl_renew.sh' /var/spool/cron/crontabs/root;then (crontab -l;echo "15 03 */3 * * /usr/local/bin/ssl_renew.sh") | crontab;fi
 
-# make folder xray 
-rm -rf /etc/vmess/.vmess.db
-rm -rf /etc/vless/.vless.db
-rm -rf /etc/trojan/.trojan.db
-rm -rf /etc/shadowsocks/.shadowsocks.db
-mkdir -p /etc/xray
-mkdir -p /etc/vmess
-mkdir -p /etc/vless
-mkdir -p /etc/trojan
-mkdir -p /etc/shadowsocks
-mkdir -p /usr/bin/xray/
-mkdir -p /var/log/xray/
-mkdir -p /var/www/html
-mkdir -p /etc/kyt/limit/vmess/ip
-mkdir -p /etc/kyt/limit/vless/ip
-mkdir -p /etc/kyt/limit/trojan/ip
-mkdir -p /etc/kyt/limit/shadowsocks/ip
-mkdir -p /etc/limit/vmess
-mkdir -p /etc/limit/vless
-mkdir -p /etc/limit/trojan
-mkdir -p /etc/limit/shadowsocks
-chmod +x /var/log/xray
-touch /etc/xray/domain
-touch /var/log/xray/access.log
-touch /var/log/xray/error.log
-touch /etc/vmess/.vmess.db
-touch /etc/vless/.vless.db
-touch /etc/trojan/.trojan.db
-touch /etc/shadowsocks/.shadowsocks.db
-echo "& plughin Account" >>/etc/vmess/.vmess.db
-echo "& plughin Account" >>/etc/vless/.vless.db
-echo "& plughin Account" >>/etc/trojan/.trojan.db
-echo "& plughin Account" >>/etc/shadowsocks/.shadowsocks.db
 mkdir -p /home/vps/public_html
-    
+
 # set uuid
 uuid=$(cat /proc/sys/kernel/random/uuid)
 # xray config
@@ -117,7 +100,7 @@ cat > /etc/xray/config.json << END
   "log" : {
     "access": "/var/log/xray/access.log",
     "error": "/var/log/xray/error.log",
-    "loglevel": "warning"
+    "loglevel": "info"
   },
   "inbounds": [
       {
@@ -131,13 +114,13 @@ cat > /etc/xray/config.json << END
     },
    {
      "listen": "127.0.0.1",
-     "port": "10001",
+     "port": "14016",
      "protocol": "vless",
       "settings": {
           "decryption":"none",
             "clients": [
                {
-                 "id": "${uuid}"                 
+                 "id": "${uuid}"
 #vless
              }
           ]
@@ -149,9 +132,9 @@ cat > /etc/xray/config.json << END
           }
         }
      },
-     {
+    {
      "listen": "127.0.0.1",
-     "port": "10002",
+     "port": "23456",
      "protocol": "vmess",
       "settings": {
             "clients": [
@@ -170,11 +153,31 @@ cat > /etc/xray/config.json << END
         }
      },
     {
+     "listen": "127.0.0.1",
+     "port": "28406",
+     "protocol": "vmess",
+      "settings": {
+            "clients": [
+               {
+                 "id": "${uuid}",
+                 "alterId": 0
+#vmess
+             }
+          ]
+       },
+       "streamSettings":{
+         "network": "ws",
+            "wsSettings": {
+                "path": "/worryfree"
+          }
+        }
+     },
+    {
       "listen": "127.0.0.1",
-      "port": "10003",
+      "port": "25432",
       "protocol": "trojan",
       "settings": {
-          "decryption":"none",		
+          "decryption":"none",
            "clients": [
               {
                  "password": "${uuid}"
@@ -191,8 +194,8 @@ cat > /etc/xray/config.json << END
          }
      },
     {
-         "listen": "127.0.0.1",
-        "port": "10004",
+        "listen": "127.0.0.1",
+        "port": "30300",
         "protocol": "shadowsocks",
         "settings": {
            "clients": [
@@ -210,10 +213,10 @@ cat > /etc/xray/config.json << END
                "path": "/ss-ws"
            }
         }
-     },	
+     },
       {
         "listen": "127.0.0.1",
-     "port": "10005",
+     "port": "24456",
         "protocol": "vless",
         "settings": {
          "decryption":"none",
@@ -233,7 +236,7 @@ cat > /etc/xray/config.json << END
      },
      {
       "listen": "127.0.0.1",
-     "port": "10006",
+     "port": "31234",
      "protocol": "vmess",
       "settings": {
             "clients": [
@@ -253,7 +256,7 @@ cat > /etc/xray/config.json << END
      },
      {
         "listen": "127.0.0.1",
-     "port": "10007",
+     "port": "33456",
         "protocol": "trojan",
         "settings": {
           "decryption":"none",
@@ -273,7 +276,7 @@ cat > /etc/xray/config.json << END
    },
    {
     "listen": "127.0.0.1",
-    "port": "10008",
+    "port": "30310",
     "protocol": "shadowsocks",
     "settings": {
         "clients": [
@@ -291,7 +294,7 @@ cat > /etc/xray/config.json << END
            "serviceName": "ss-grpc"
           }
        }
-    }	
+    }
   ],
   "outbounds": [
     {
@@ -389,7 +392,7 @@ WantedBy=multi-user.target
 EOF
 cat > /etc/systemd/system/runn.service <<EOF
 [Unit]
-Description=Mantap-Sayang
+Description=rmblvpn
 After=network.target
 
 [Service]
@@ -413,9 +416,10 @@ unzip -q trojan-go.zip && rm -rf trojan-go.zip
 mv trojan-go /usr/local/bin/trojan-go
 chmod +x /usr/local/bin/trojan-go
 mkdir /var/log/trojan-go/
-touch /etc/trojan-go/akun.conf
+touch /etc/trojan-go/trgo
 touch /var/log/trojan-go/trojan-go.log
 
+uuid=$(cat /proc/sys/kernel/random/uuid)
 # Buat Config Trojan Go
 cat > /etc/trojan-go/config.json << END
 {
@@ -484,8 +488,8 @@ END
 # Installing Trojan Go Service
 cat > /etc/systemd/system/trojan-go.service << END
 [Unit]
-Description=Trojan-Go Service Mod By ARTA M
-Documentation=github.com/adammoi/vipies
+Description=Trojan-Go Service Mod By SF
+Documentation=nekopoi.care
 After=network.target nss-lookup.target
 
 [Service]
@@ -508,13 +512,18 @@ END
 
 #nginx config
 cat >/etc/nginx/conf.d/xray.conf <<EOF
-
     server {
              listen 80;
              listen [::]:80;
+             listen 7788;
+             listen [::]:7788;
+             listen 8181;
+             listen [::]:8181;
+             listen 8282;
+             listen [::]:8282;
              listen 443 ssl http2 reuseport;
              listen [::]:443 http2 reuseport;
-             server_name $domain;
+             server_name *.$domain;
              ssl_certificate /etc/xray/xray.crt;
              ssl_certificate_key /etc/xray/xray.key;
              ssl_ciphers EECDH+CHACHA20:EECDH+CHACHA20-draft:EECDH+ECDSA+AES128:EECDH+aRSA+AES128:RSA+AES128:EECDH+ECDSA+AES256:EECDH+aRSA+AES256:RSA+AES256:EECDH+ECDSA+3DES:EECDH+aRSA+3DES:RSA+3DES:!MD5;
@@ -525,7 +534,7 @@ EOF
 sed -i '$ ilocation = /vless' /etc/nginx/conf.d/xray.conf
 sed -i '$ i{' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_pass http://127.0.0.1:10001;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_pass http://127.0.0.1:14016;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
@@ -537,7 +546,19 @@ sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 sed -i '$ ilocation = /vmess' /etc/nginx/conf.d/xray.conf
 sed -i '$ i{' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_pass http://127.0.0.1:10002;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_pass http://127.0.0.1:23456;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Upgrade \$http_upgrade;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
+sed -i '$ i}' /etc/nginx/conf.d/xray.conf
+
+sed -i '$ ilocation = /worryfree' /etc/nginx/conf.d/xray.conf
+sed -i '$ i{' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_pass http://127.0.0.1:28406;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
@@ -549,7 +570,7 @@ sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 sed -i '$ ilocation = /trojan-ws' /etc/nginx/conf.d/xray.conf
 sed -i '$ i{' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_pass http://127.0.0.1:10003;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_pass http://127.0.0.1:25432;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
@@ -570,10 +591,11 @@ sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
 sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 
+
 sed -i '$ ilocation = /ss-ws' /etc/nginx/conf.d/xray.conf
 sed -i '$ i{' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_pass http://127.0.0.1:10004;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_pass http://127.0.0.1:30300;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
@@ -600,7 +622,7 @@ sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
 sed -i '$ igrpc_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
 sed -i '$ igrpc_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
 sed -i '$ igrpc_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
-sed -i '$ igrpc_pass grpc://127.0.0.1:10005;' /etc/nginx/conf.d/xray.conf
+sed -i '$ igrpc_pass grpc://127.0.0.1:24456;' /etc/nginx/conf.d/xray.conf
 sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 
 sed -i '$ ilocation ^~ /vmess-grpc' /etc/nginx/conf.d/xray.conf
@@ -609,7 +631,7 @@ sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
 sed -i '$ igrpc_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
 sed -i '$ igrpc_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
 sed -i '$ igrpc_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
-sed -i '$ igrpc_pass grpc://127.0.0.1:10006;' /etc/nginx/conf.d/xray.conf
+sed -i '$ igrpc_pass grpc://127.0.0.1:31234;' /etc/nginx/conf.d/xray.conf
 sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 
 sed -i '$ ilocation ^~ /trojan-grpc' /etc/nginx/conf.d/xray.conf
@@ -618,7 +640,7 @@ sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
 sed -i '$ igrpc_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
 sed -i '$ igrpc_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
 sed -i '$ igrpc_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
-sed -i '$ igrpc_pass grpc://127.0.0.1:10007;' /etc/nginx/conf.d/xray.conf
+sed -i '$ igrpc_pass grpc://127.0.0.1:33456;' /etc/nginx/conf.d/xray.conf
 sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 
 sed -i '$ ilocation ^~ /ss-grpc' /etc/nginx/conf.d/xray.conf
@@ -627,13 +649,12 @@ sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
 sed -i '$ igrpc_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
 sed -i '$ igrpc_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
 sed -i '$ igrpc_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
-sed -i '$ igrpc_pass grpc://127.0.0.1:10008;' /etc/nginx/conf.d/xray.conf
+sed -i '$ igrpc_pass grpc://127.0.0.1:30310;' /etc/nginx/conf.d/xray.conf
 sed -i '$ i}' /etc/nginx/conf.d/xray.conf
-
 
 echo -e "$yell[SERVICE]$NC Restart All service"
 systemctl daemon-reload
-sleep 1
+sleep 0.5
 echo -e "[ ${green}ok${NC} ] Enable & restart xray "
 systemctl daemon-reload
 systemctl enable xray
@@ -646,73 +667,14 @@ systemctl start trojan-go
 systemctl enable trojan-go
 systemctl restart trojan-go
 
-#cd /usr/bin/
-# vmess
-#wget -O add-ws "https://raw.githubusercontent.com/awanklod/alvi/main/xray/add-ws.sh" && chmod +x add-ws
-#wget -O trialvmess "https://raw.githubusercontent.com/awanklod/alvi/main/xray/trialvmess.sh" && chmod +x trialvmess
-#wget -O renew-ws "https://raw.githubusercontent.com/awanklod/alvi/main/xray/renew-ws.sh" && chmod +x renew-ws
-#wget -O del-ws "https://raw.githubusercontent.com/awanklod/alvi/main/xray/del-ws.sh" && chmod +x del-ws
-#wget -O cek-ws "https://raw.githubusercontent.com/awanklod/alvi/main/xray/cek-ws.sh" && chmod +x cek-ws
-#wget -O cek-ws2 "https://raw.githubusercontent.com/awanklod/alvi/main/xray/cek-ws2" && chmod +x cek-ws2
-#wget -O cek-ws3 "https://raw.githubusercontent.com/awanklod/alvi/main/xray/cek-ws3" && chmod +x cek-ws3
-#wget -O quotavmess "https://raw.githubusercontent.com/awanklod/alvi/main/xray/quotavmess.sh" && chmod +x quotavmess
-#wget -O editip-vmess "https://raw.githubusercontent.com/awanklod/alvi/main/xray/editip-vmess.sh" && chmod +x editip-vmess
-
-# vless
-#wget -O add-vless "https://raw.githubusercontent.com/awanklod/alvi/main/xray/add-vless.sh" && chmod +x add-vless
-#wget -O trialvless "https://raw.githubusercontent.com/awanklod/alvi/main/xray/trialvless.sh" && chmod +x trialvless
-#wget -O renew-vless "https://raw.githubusercontent.com/awanklod/alvi/main/xray/renew-vless.sh" && chmod +x renew-vless
-#wget -O del-vless "https://raw.githubusercontent.com/awanklod/alvi/main/xray/del-vless.sh" && chmod +x del-vless
-#wget -O cek-vless "https://raw.githubusercontent.com/awanklod/alvi/main/xray/cek-vless.sh" && chmod +x cek-vless
-#wget -O cek-vless2 "https://raw.githubusercontent.com/awanklod/alvi/main/xray/cek-vless2" && chmod +x cek-vless2
-#wget -O cek-vless3 "https://raw.githubusercontent.com/awanklod/alvi/main/xray/cek-vless3" && chmod +x cek-vless3
-#wget -O quotavless "https://raw.githubusercontent.com/awanklod/alvi/main/xray/quotavless.sh" && chmod +x quotavless
-#wget -O editip-vless "https://raw.githubusercontent.com/awanklod/alvi/main/xray/editip-vless.sh" && chmod +x editip-vless
-
-# trojan
-#wget -O add-tr "https://raw.githubusercontent.com/awanklod/alvi/main/xray/add-tr.sh" && chmod +x add-tr
-#wget -O trialtrojan "https://raw.githubusercontent.com/awanklod/alvi/main/xray/trialtrojan.sh" && chmod +x trialtrojan
-#wget -O del-tr "https://raw.githubusercontent.com/awanklod/alvi/main/xray/del-tr.sh" && chmod +x del-tr
-#wget -O renew-tr "https://raw.githubusercontent.com/awanklod/alvi/main/xray/renew-tr.sh" && chmod +x renew-tr
-#wget -O cek-tr "https://raw.githubusercontent.com/awanklod/alvi/main/xray/cek-tr.sh" && chmod +x cek-tr
-#wget -O cek-tr2 "https://raw.githubusercontent.com/awanklod/alvi/main/xray/cek-tr2" && chmod +x cek-tr2
-#wget -O cek-tr3 "https://raw.githubusercontent.com/awanklod/alvi/main/xray/cek-tr3" && chmod +x cek-tr3
-#wget -O quotatrojan "https://raw.githubusercontent.com/awanklod/alvi/main/xray/quotatrojan.sh" && chmod +x quotatrojan
-#wget -O editip-trojan "https://raw.githubusercontent.com/awanklod/alvi/main/xray/editip-trojan.sh" && chmod +x editip-trojan
-
-# trojan go
-#wget -O addtrgo "https://raw.githubusercontent.com/awanklod/alvi/main/xray/addtrgo.sh" && chmod +x addtrgo
-#wget -O trialtrojango "https://raw.githubusercontent.com/awanklod/alvi/main/xray/trialtrojango.sh" && chmod +x trialtrojango
-#wget -O deltrgo "https://raw.githubusercontent.com/awanklod/alvi/main/xray/deltrgo.sh" && chmod +x deltrgo
-#wget -O renewtrgo "https://raw.githubusercontent.com/awanklod/alvi/main/xray/renewtrgo.sh" && chmod +x renewtrgo
-#wget -O cektrgo "https://raw.githubusercontent.com/awanklod/alvi/main/xray/cektrgo.sh" && chmod +x cektrgo
-
-# shadowsocks
-#wget -O add-ssws "https://raw.githubusercontent.com/awanklod/alvi/main/xray/add-ssws.sh" && chmod +x add-ssws
-#wget -O trialssws "https://raw.githubusercontent.com/awanklod/alvi/main/xray/trialssws.sh" && chmod +x trialssws
-#wget -O del-ssws "https://raw.githubusercontent.com/awanklod/alvi/main/xray/del-ssws.sh" && chmod +x del-ssws
-#wget -O renew-ssws "https://raw.githubusercontent.com/awanklod/alvi/main/xray/renew-ssws.sh" && chmod +x renew-ssws
-#wget -O cek-ssws "https://raw.githubusercontent.com/awanklod/alvi/main/xray/cek-ssws.sh" && chmod +x cek-ssws
-#wget -O cek-ssws2 "https://raw.githubusercontent.com/awanklod/alvi/main/xray/cek-ssws2" && chmod +x cek-ssws2
-#wget -O cek-ssws3 "https://raw.githubusercontent.com/awanklod/alvi/main/xray/cek-ssws3" && chmod +x cek-ssws3
-#wget -O quotashadowsocks "https://raw.githubusercontent.com/awanklod/alvi/main/xray/quotashadowsocks.sh" && chmod +x quotashadowsocks
-#wget -O editip-shadowsocks "https://raw.githubusercontent.com/awanklod/alvi/main/xray/editip-shadowsocks.sh" && chmod +x editip-shadowsocks
-
-#Sistem Tambahan
-#wget -O ip-shadowsocks "https://raw.githubusercontent.com/awanklod/alvi/main/limit3/ip-shadowsocks" && chmod +x ip-shadowsocks
-#wget -O ip-trojan "https://raw.githubusercontent.com/awanklod/alvi/main/limit3/ip-trojan" && chmod +x ip-trojan
-#wget -O ip-vless "https://raw.githubusercontent.com/awanklod/alvi/main/limit3/ip-vless" && chmod +x ip-vless
-#wget -O ip-vmess "https://raw.githubusercontent.com/awanklod/alvi/main/limit3/ip-vmess" && chmod +x ip-vmess
-#wget -O limit "https://raw.githubusercontent.com/awanklod/alvi/main/limit3/limit" && chmod +x limit
-
-sleep 1
+sleep 0.5
 yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
 yellow "xray/Vmess"
 yellow "xray/Vless"
 
-mv /root/domain /etc/xray/ 
+mv /root/domain /etc/xray/
 if [ -f /root/scdomain ];then
 rm /root/scdomain > /dev/null 2>&1
 fi
 clear
-rm -f ins-xray.sh  
+rm -f ins-xray.sh
