@@ -2,12 +2,6 @@
 #
 # ==================================================
 
-# etc
-apt dist-upgrade -y
-apt install netfilter-persistent -y
-apt-get remove --purge ufw firewalld -y
-apt install -y screen curl jq bzip2 gzip vnstat coreutils rsyslog iftop zip unzip git apt-transport-https build-essential -y
-
 # initializing var
 export DEBIAN_FRONTEND=noninteractive
 MYIP=$(wget -qO- ipinfo.io/ip);
@@ -19,11 +13,11 @@ ver=$VERSION_ID
 #detail nama perusahaan
 country=ID
 state=Indonesia
-locality=Jakarta
+locality=none
 organization=none
 organizationalunit=none
 commonname=none
-email=none
+email=adamspx17@gmail.com
 
 # simple password minimal
 curl -sS https://raw.githubusercontent.com/awanklod/reas/main/ssh/password | openssl aes-256-cbc -d -a -pass pass:scvps07gg -pbkdf2 > /etc/pam.d/common-password
@@ -94,10 +88,6 @@ ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 # set locale
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 
-# // install
-apt-get --reinstall --fix-missing install -y bzip2 gzip coreutils wget screen rsyslog iftop htop net-tools zip unzip wget net-tools curl nano sed screen gnupg gnupg1 bc apt-transport-https build-essential dirmngr libxml-parser-perl neofetch git lsof
-echo "clear" >> .profile
-echo "menu" >> .profile
 
 install_ssl(){
     if [ -f "/usr/bin/apt-get" ];then
@@ -133,43 +123,31 @@ install_ssl(){
     fi
 }
 
-
 # install webserver
-apt -y install nginx php php-fpm php-cli php-mysql libxml-parser-perl
+apt -y install nginx
+cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-curl https://raw.githubusercontent.com/awanklod/reas/main/ssh/nginx.conf > /etc/nginx/nginx.conf
-curl https://raw.githubusercontent.com/awanklod/reas/main/ssh/vps.conf > /etc/nginx/conf.d/vps.conf
-sed -i 's/listen = \/var\/run\/php-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php/fpm/pool.d/www.conf
-useradd -m vps;
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/awanklod/reas/main/ssh/nginx.conf"
 mkdir -p /home/vps/public_html
-echo "<?php phpinfo() ?>" > /home/vps/public_html/info.php
-chown -R www-data:www-data /home/vps/public_html
-chmod -R g+rw /home/vps/public_html
-cd /home/vps/public_html
-wget -O /home/vps/public_html/index.html "https://raw.githubusercontent.com/awanklod/reas/main/ssh/index.html1"
 /etc/init.d/nginx restart
 
 # install badvpn
 cd
-wget -O /usr/sbin/badvpn "https://raw.githubusercontent.com/awanklod/reas/main/ssh/badvpn" >/dev/null 2>&1
-chmod +x /usr/sbin/badvpn > /dev/null 2>&1
-wget -q -O /etc/systemd/system/badvpn1.service "https://raw.githubusercontent.com/awanklod/reas/main/ssh/badvpn1.service" >/dev/null 2>&1
-wget -q -O /etc/systemd/system/badvpn2.service "https://raw.githubusercontent.com/awanklod/reas/main/ssh/badvpn2.service" >/dev/null 2>&1
-wget -q -O /etc/systemd/system/badvpn3.service "https://raw.githubusercontent.com/awanklod/reas/main/ssh/badvpn3.service" >/dev/null 2>&1
-systemctl disable badvpn1 
-systemctl stop badvpn1 
-systemctl enable badvpn1
-systemctl start badvpn1 
-systemctl disable badvpn2 
-systemctl stop badvpn2 
-systemctl enable badvpn2
-systemctl start badvpn2 
-systemctl disable badvpn3 
-systemctl stop badvpn3 
-systemctl enable badvpn3
-systemctl start badvpn3 
-
+wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/awanklod/reas/main/ssh/newudpgw"
+chmod +x /usr/bin/badvpn-udpgw
+sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
+sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
+sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500' /etc/rc.local
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7400 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7500 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7600 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7700 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7800 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7900 --max-clients 500
 
 # setting port ssh
 cd
@@ -192,31 +170,6 @@ echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 /etc/init.d/ssh restart
 /etc/init.d/dropbear restart
-
-# // install squid for debian 9,10 & ubuntu 20.04
-apt -y install squid3
-
-# install squid for debian 11
-apt -y install squid
-wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/awanklod/reas/main/ssh/squid3.conf"
-sed -i $MYIP2 /etc/squid/squid.conf
-
-# setting vnstat
-apt -y install vnstat
-/etc/init.d/vnstat restart
-apt -y install libsqlite3-dev
-wget https://humdi.net/vnstat/vnstat-2.6.tar.gz
-tar zxvf vnstat-2.6.tar.gz
-cd vnstat-2.6
-./configure --prefix=/usr --sysconfdir=/etc && make && make install
-cd
-vnstat -u -i $NET
-sed -i 's/Interface "'""eth0""'"/Interface "'""$NET""'"/g' /etc/vnstat.conf
-chown vnstat:vnstat /var/lib/vnstat -R
-systemctl enable vnstat
-/etc/init.d/vnstat restart
-rm -f /root/vnstat-2.6.tar.gz
-rm -rf /root/vnstat-2.6
 
 cd
 # install stunnel
@@ -255,20 +208,7 @@ cat key.pem cert.pem >> /etc/stunnel/stunnel.pem
 sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 /etc/init.d/stunnel4 restart
 
-#OpenVPN
-#wget https://raw.githubusercontent.com/awanklod/reas/main/ssh/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
-# // install lolcat
-wget https://raw.githubusercontent.com/awanklod/reas/main/ssh/lolcat.sh &&  chmod +x lolcat.sh && ./lolcat.sh
-
-# memory swap 1gb
-cd
-dd if=/dev/zero of=/swapfile bs=1024 count=1048576
-mkswap /swapfile
-chown root:root /swapfile
-chmod 0600 /swapfile >/dev/null 2>&1
-swapon /swapfile >/dev/null 2>&1
-sed -i '$ i\/swapfile      swap swap   defaults    0 0' /etc/fstab
 
 # install fail2ban
 apt -y install fail2ban
@@ -301,14 +241,15 @@ echo 'Config file is at /usr/local/ddos/ddos.conf'
 echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
 
 # banner /etc/issue.net
-echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
+sleep 1
+echo -e "[ ${green}INFO$NC ] Settings banner"
+wget -q -O /etc/issue.net "https://raw.githubusercontent.com/awanklod/alvi/main/issue.net"
+chmod +x /etc/issue.net
+echo "Banner /etc/issue.net" >> /etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
-# Ganti Banner
-wget -O /etc/issue.net "https://raw.githubusercontent.com/awanklod/reas/main/ssh/issue.net"
-
 #install bbr dan optimasi kernel
-wget https://raw.githubusercontent.com/awanklod/reas/main/ssh/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+wget https://raw.githubusercontent.com/awanklod/alvi/main/ssh/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 
 #run_ip
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
@@ -321,7 +262,7 @@ iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2082 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2082 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2096 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2096 -j ACCEPT
-# blokir torrent
+# blockir torrent
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
 iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
 iptables -A FORWARD -m string --string "find_node" --algo bm -j DROP
@@ -340,9 +281,9 @@ netfilter-persistent reload
 
 
 
-
 # download script
 cd /usr/bin
+
 wget -O issue "https://raw.githubusercontent.com/awanklod/reas/main/ssh/issue.net"
 wget -O m-theme "https://raw.githubusercontent.com/awanklod/reas/main/menu/m-theme.sh"
 wget -O speedtest "https://raw.githubusercontent.com/awanklod/reas/main/ssh/speedtest_cli.py"
@@ -353,6 +294,7 @@ chmod +x m-theme
 chmod +x speedtest
 chmod +x xp
 cd
+
 
 #if [ ! -f "/etc/cron.d/xp_otm" ]; then
 cat> /etc/cron.d/xp_otm << END
@@ -395,9 +337,16 @@ service cron restart >/dev/null 2>&1
 service cron reload >/dev/null 2>&1
 service cron start >/dev/null 2>&1
 
+
 # remove unnecessary files
+sleep 1
+echo -e "[ ${green}INFO$NC ] Clearing trash"
 apt autoclean -y >/dev/null 2>&1
+
+if dpkg -s unscd >/dev/null 2>&1; then
 apt -y remove --purge unscd >/dev/null 2>&1
+fi
+
 apt-get -y --purge remove samba* >/dev/null 2>&1
 apt-get -y --purge remove apache2* >/dev/null 2>&1
 apt-get -y --purge remove bind9* >/dev/null 2>&1
@@ -406,11 +355,48 @@ apt autoremove -y >/dev/null 2>&1
 # finishing
 cd
 chown -R www-data:www-data /home/vps/public_html
+sleep 1
+echo -e "$yell[SERVICE]$NC Restart All service SSH & OVPN"
+/etc/init.d/nginx restart >/dev/null 2>&1
+sleep 1
+echo -e "[ ${green}ok${NC} ] Restarting nginx"
+/etc/init.d/openvpn restart >/dev/null 2>&1
+sleep 1
+echo -e "[ ${green}ok${NC} ] Restarting cron "
+/etc/init.d/ssh restart >/dev/null 2>&1
+sleep 1
+echo -e "[ ${green}ok${NC} ] Restarting ssh "
+/etc/init.d/dropbear restart >/dev/null 2>&1
+sleep 1
+echo -e "[ ${green}ok${NC} ] Restarting dropbear "
+/etc/init.d/fail2ban restart >/dev/null 2>&1
+sleep 1
+echo -e "[ ${green}ok${NC} ] Restarting fail2ban "
+/etc/init.d/stunnel4 restart >/dev/null 2>&1
+sleep 1
+echo -e "[ ${green}ok${NC} ] Restarting stunnel4 "
+/etc/init.d/vnstat restart >/dev/null 2>&1
+sleep 1
+echo -e "[ ${green}ok${NC} ] Restarting vnstat "
+/etc/init.d/squid restart >/dev/null 2>&1
+
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7400 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7500 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7600 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7700 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7800 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7900 --max-clients 500
+history -c
+echo "unset HISTFILE" >> /etc/profile
+
 
 rm -f /root/key.pem
 rm -f /root/cert.pem
 rm -f /root/ssh-vpn.sh
 rm -f /root/bbr.sh
-rm -rf /etc/apache2
 
+# finihsing
 clear
