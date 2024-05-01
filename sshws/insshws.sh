@@ -1,87 +1,36 @@
 #!/bin/bash
-# Proxy For Edukasi & Imclass
+#installer Websocker tunneling 
 
-# Link Hosting Kalian
-SFVPN="https://raw.githubusercontent.com/awanklod/reas/main/install"
+cd
+apt install python -y
 
+#Install Script Websocket-SSH Python
 wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/awanklod/reas/main/sshws/ws-dropbear
+wget -O /usr/local/bin/ws-stunnel https://raw.githubusercontent.com/awanklod/reas/main/sshws/ws-stunnel
+
+#izin permision
 chmod +x /usr/local/bin/ws-dropbear
+chmod +x /usr/local/bin/ws-stunnel
 
-# Installing Service
-cat > /etc/systemd/system/ws-nontls.service << END
-[Unit]
-Description=Python Proxy Mod By SFVPNVPN 
-Documentation=https://t.me/abecasdee13
-After=network.target nss-lookup.target
 
-[Service]
-Type=simple
-User=root
-CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-NoNewPrivileges=true
-ExecStart=/usr/bin/python -O /usr/local/bin/ws-dropbear
-Restart=on-failure
+#System Dropbear Websocket-SSH Python
+wget -O /etc/systemd/system/ws-dropbear.service https://raw.githubusercontent.com/awanklod/reas/main/sshws/service-wsdropbear && chmod +x /etc/systemd/system/ws-dropbear.service
 
-[Install]
-WantedBy=multi-user.target
-END
+#System SSL/TLS Websocket-SSH Python
+wget -O /etc/systemd/system/ws-stunnel.service https://raw.githubusercontent.com/awanklod/reas/main/sshws/ws-stunnel.service && chmod +x /etc/systemd/system/ws-stunnel.service
 
+#restart service
+#
 systemctl daemon-reload
+
+#Enable & Start & Restart ws-dropbear service
 systemctl enable ws-dropbear.service
 systemctl start ws-dropbear.service
 systemctl restart ws-dropbear.service
 
-#wget -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/awanklod/reas/main/sshws/ws-ovpn.py
-#chmod +x /usr/local/bin/ws-ovpn
-
-# Installing Service
-#cat > /etc/systemd/system/ws-ovpn.service << END
-#[Unit]
-#Description=Python Proxy Mod By SFVPN
-#Documentation=https://t.me/abecasdee13
-#After=network.target nss-lookup.target
-
-#[Service]
-#Type=simple
-#User=root
-#CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-#AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-#NoNewPrivileges=true
-#ExecStart=/usr/bin/python -O /usr/local/bin/ws-ovpn 2086
-#Restart=on-failure
-
-#[Install]
-#WantedBy=multi-user.target
-#END
-
-#systemctl daemon-reload
-#systemctl enable ws-ovpn
-#systemctl restart ws-ovpn
-
-wget -O /usr/local/bin/ws-stunnel https://raw.githubusercontent.com/awanklod/reas/main/sshws/ws-stunnel
-chmod +x /usr/local/bin/ws-stunnel
-
-# Installing Service
-cat > /etc/systemd/system/ws-stunnel.service << END
-[Unit]
-Description=Python Proxy Mod By SFVPN
-Documentation=https://t.me/abecasdee13
-After=network.target nss-lookup.target
-
-[Service]
-Type=simple
-User=root
-CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-NoNewPrivileges=true
-ExecStart=/usr/bin/python -O /usr/local/bin/ws-stunnel
-Restart=on-failure
-
-[Install]
-WantedBy=multi-user.target
-END
-
+#Enable & Start & Restart ws-openssh service
 systemctl enable ws-stunnel.service
 systemctl start ws-stunnel.service
 systemctl restart ws-stunnel.service
+
+clear
