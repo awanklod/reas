@@ -259,7 +259,7 @@ sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 #wget https://raw.githubusercontent.com/awanklod/reas/main/ssh/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
 # // install lolcat
-#wget https://raw.githubusercontent.com/awanklod/reas/main/ssh/lolcat.sh &&  chmod +x lolcat.sh && ./lolcat.sh
+wget https://raw.githubusercontent.com/awanklod/reas/main/ssh/lolcat.sh &&  chmod +x lolcat.sh && ./lolcat.sh
 
 # memory swap 1gb
 cd
