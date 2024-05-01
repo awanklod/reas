@@ -229,21 +229,20 @@ socket = l:TCP_NODELAY=1
 socket = r:TCP_NODELAY=1
 
 [dropbear]
-accept = 8880
+accept = 222
 connect = 127.0.0.1:22
 
 [dropbear]
-accept = 8443
+accept = 777
 connect = 127.0.0.1:109
 
 [ws-stunnel]
-accept = 444
+accept = 2096
 connect = 700
 
 [openvpn]
-accept = 990
+accept = 442
 connect = 127.0.0.1:1194
-
 END
 
 # make a certificate
@@ -311,6 +310,17 @@ wget -O /etc/issue.net "https://raw.githubusercontent.com/awanklod/reas/main/ssh
 #install bbr dan optimasi kernel
 wget https://raw.githubusercontent.com/awanklod/reas/main/ssh/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 
+#run_ip
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 80 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 443 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 8080 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 8080 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2082 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2082 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2096 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2096 -j ACCEPT
 # blokir torrent
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
 iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
