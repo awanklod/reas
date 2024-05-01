@@ -404,21 +404,7 @@ Restart=on-abort
 [Install]
 WantedBy=multi-user.target
 EOF
-#run_ip
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 80 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 443 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 8080 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 8080 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2082 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2082 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2096 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2096 -j ACCEPT
-iptables-save > /etc/iptables.up.rules
-iptables-restore -t < /etc/iptables.up.rules
-netfilter-persistent save
-netfilter-persistent reload
+
 # Install Trojan Go
 latest_version="$(curl -s "https://api.github.com/repos/p4gefau1t/trojan-go/releases" | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
 trojango_link="https://github.com/p4gefau1t/trojan-go/releases/download/v${latest_version}/trojan-go-linux-amd64.zip"
