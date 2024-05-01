@@ -8,7 +8,7 @@ Casper2
 else
   key2
   domain
-  Casper3
+  Casper2
 fi
 }
 clear
